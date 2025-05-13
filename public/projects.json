@@ -1,0 +1,47 @@
+[
+  {
+    "image": "https://i.ibb.co/NnG9FkW/urban-Dwell.png",
+    "name": "Urban Dwell",
+    "tagline": "Building Management System",
+    "description": "UrbanDwell is a Building Management System (BMS) web application designed to simplify apartment management processes. It provides a seamless experience for users to explore apartments, manage agreements, and handle payments effectively.",
+    "features": [
+      "Optimized for desktop, tablet, and mobile devices.",
+      "Enables tenants to manage profiles, agreements, and payments.",
+      "Empowers administrators to oversee members, announcements, and agreement requests."
+    ],
+    "technologies": ["React", "Tailwind", "Firebase", "ExpressJS", "MongoDB"],
+    "live": "https://urbandwell.netlify.app/",
+    "client": "https://github.com/shakurShirajul/urban-dwell-client",
+    "server": "https://github.com/shakurShirajul/urban-dwell-server"
+  },
+  {
+    "image": "https://i.ibb.co/8d7CHMV/textify.png",
+    "name": "Textify",
+    "tagline": "Dynamic Blogging Platform",
+    "description": "Textify is a dynamic blogging platform designed to empower users to create, share, and engage with content effortlessly. Built with a clean and intuitive interface, it offers a seamless experience for both bloggers and readers alike.",
+    "features": [
+      "Users can easily compose and publish their blogs with rich text formatting options.",
+      "Readers can engage with blog posts through comments, fostering discussion and feedback.",
+      "Users can maintain wishlists of articles they want to read or revisit later, enhancing content discovery and bookmarking."
+    ],
+    "technologies": ["React", "Tailwind", "Firebase", "ExpressJS", "MongoDB"],
+    "live": "https://texttify.netlify.app/",
+    "client": "https://github.com/shakurShirajul/textify-client",
+    "server": "https://github.com/shakurShirajul/textify-server"
+  },
+  {
+    "image": "https://i.ibb.co/v435JpG/craftopia.png",
+    "name": "Craftopia",
+    "tagline": "Creative Art and Craft Showcase",
+    "description": "Craftopia is a beautifully crafted website showcasing a variety of creative art and crafts. Craftoopia aims to inspire and empower creators by providing a visually appealing platform for showcasing their work.",
+    "features": [
+      "Craftoopia serves as a source of inspiration by displaying a diverse range of art and crafts from various domains.",
+      "Craftoopia consolidates these showcases into a single, easy-to-navigate website.",
+      "Users can add, update, and delete craft items with detailed information, including images, descriptions, prices, ratings, and customization options."
+    ],
+    "technologies": ["React", "Tailwind", "Firebase", "ExpressJS", "MongoDB"],
+    "live": "https://craftoopia.netlify.app/",
+    "client": "https://github.com/shakurShirajul/craftopia-client/tree/main",
+    "server": "https://github.com/shakurShirajul/craftopia-server"
+  }
+]
