@@ -16,13 +16,23 @@ export default function ModeToggle() {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="ghost" onClick={() => toggleTheme()}>
-          <p>{theme && theme === "light" ? <LucideSun /> : <LucideMoon />}</p>
+        <Button 
+          variant="ghost" 
+          onClick={() => toggleTheme()}
+          className="h-9 sm:h-10 w-9 sm:w-10 p-0"
+        >
+          <span className="flex items-center justify-center">
+            {theme && theme === "light" ? (
+              <LucideSun className="w-4 h-4 sm:w-5 sm:h-5" />
+            ) : (
+              <LucideMoon className="w-4 h-4 sm:w-5 sm:h-5" />
+            )}
+          </span>
         </Button>
       </TooltipTrigger>
       <TooltipContent>
-        <p>
-          Toggle Mode <Kbd>D</Kbd>
+        <p className="text-xs sm:text-sm">
+          Toggle Mode <Kbd className="text-xs">D</Kbd>
         </p>
       </TooltipContent>
     </Tooltip>
