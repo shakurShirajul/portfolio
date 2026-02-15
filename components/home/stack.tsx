@@ -8,7 +8,7 @@ export default function Stack() {
   const { stack } = data;
   return (
     <Card className="p-4 sm:p-5 md:p-6">
-      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
         Stack
       </h1>
       <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 justify-center items-center">
