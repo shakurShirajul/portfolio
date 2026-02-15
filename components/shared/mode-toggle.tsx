@@ -4,7 +4,6 @@ import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Kbd } from "../ui/kbd";
-import { LuMoon, LuSun } from "react-icons/lu";
 import { LucideMoon, LucideSun } from "lucide-react";
 
 export default function ModeToggle() {
