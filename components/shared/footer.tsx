@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Shakur Shirajul</h3>
+            <h3 className="text-lg font-semibold">Shirajul Islam Shakur</h3>
             <p className="text-sm text-muted-foreground">
               Full Stack Developer passionate about building exceptional digital experiences with modern web technologies.
             </p>
