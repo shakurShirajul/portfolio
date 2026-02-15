@@ -1,3 +1,15 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Read technical articles and insights on web development, React, Next.js, TypeScript, and software engineering best practices by Shakur Shirajul.',
+  openGraph: {
+    title: 'Blog | Shakur Shirajul',
+    description: 'Technical articles and insights on web development and software engineering.',
+    url: 'https://shakurshirajul.com/blogs',
+  },
+}
+
 export default function BlogPage() {
   return (
     <div className="max-w-4xl mx-auto">
