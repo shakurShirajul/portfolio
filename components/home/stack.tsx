@@ -23,8 +23,11 @@ export default function Stack() {
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  width={40}
-                  height={40}
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, 48px"
+                  quality={80}
                   className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                 />
               </Link>

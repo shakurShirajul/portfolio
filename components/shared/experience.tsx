@@ -40,6 +40,9 @@ export default function Experience() {
                                         className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-border"
                                         width={48}
                                         height={48}
+                                        loading="lazy"
+                                        sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 48px"
+                                        quality={85}
                                     />
                                 </Link>
                                 <div className="min-w-0 flex-1">
@@ -74,6 +77,9 @@ export default function Experience() {
                                         className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-border"
                                         width={48}
                                         height={48}
+                                        loading="lazy"
+                                        sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 48px"
+                                        quality={85}
                                     />
                                 </Link>
                                 <div className="min-w-0 flex-1">

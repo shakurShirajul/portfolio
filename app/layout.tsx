@@ -3,50 +3,59 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Navbar from "@/components/shared/navbar";
-import Footer from "@/components/shared/footer";
-import KeyboardShortcut from "@/components/shared/keyboard-shortcut";
-import { personSchema, websiteSchema } from "@/lib/schema";
+import StructuredData from "@/components/shared/structured-data";
+import dynamic from "next/dynamic";
+
+// Lazy load Footer and KeyboardShortcut
+const Footer = dynamic(() => import("@/components/shared/footer"));
+const KeyboardShortcut = dynamic(() => import("@/components/shared/keyboard-shortcut"));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shakurshirajul.com'),
   title: {
-    default: 'Shakur Shirajul - Full Stack Developer & Software Engineer',
-    template: '%s | Shakur Shirajul'
+    default: 'Shirajul Islam Shakur - Full Stack Developer & Software Engineer',
+    template: '%s | Shirajul Islam Shakur'
   },
-  description: 'Shakur Shirajul is a Full Stack Developer and Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my portfolio, projects, and blog.',
-  keywords: ['Shakur Shirajul', 'Full Stack Developer', 'Software Engineer', 'React Developer', 'Next.js', 'TypeScript', 'Web Development', 'Portfolio', 'Bangladesh Developer','IIUC', 'Chittagong Developer', 'Shirajul Islam Shakur', 'Shakur Shirajul Portfolio', 'Shakur Shirajul Blog'],
-  authors: [{ name: 'Shakur Shirajul', url: 'https://shakurshirajul.com' }],
-  creator: 'Shakur Shirajul',
-  publisher: 'Shakur Shirajul',
+  description: 'Shirajul Islam Shakur is a Full Stack Developer and Software Engineer specializing in React, Next.js, TypeScript, and modern web development. View my portfolio, projects, and blog.',
+  keywords: ['Shirajul Islam Shakur', 'Shakur Shirajul', 'Full Stack Developer', 'Software Engineer', 'React Developer', 'Next.js', 'TypeScript', 'Web Development', 'Portfolio', 'Bangladesh Developer','IIUC', 'Chittagong Developer', 'Shirajul Islam Shakur Portfolio', 'Shirajul Islam Shakur Blog'],
+  authors: [{ name: 'Shirajul Islam Shakur', url: 'https://shakurshirajul.com' }],
+  creator: 'Shirajul Islam Shakur',
+  publisher: 'Shirajul Islam Shakur',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://shakurshirajul.com',
-    title: 'Shakur Shirajul - Full Stack Developer & Software Engineer',
+    title: 'Shirajul Islam Shakur - Full Stack Developer & Software Engineer',
     description: 'Full Stack Developer specializing in React, Next.js, and TypeScript. Explore my portfolio, projects, and technical blog.',
-    siteName: 'Shakur Shirajul Portfolio',
+    siteName: 'Shirajul Islam Shakur Portfolio',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Shakur Shirajul - Full Stack Developer',
+        alt: 'Shirajul Islam Shakur - Full Stack Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakur Shirajul - Full Stack Developer & Software Engineer',
+    title: 'Shirajul Islam Shakur - Full Stack Developer & Software Engineer',
     description: 'Full Stack Developer specializing in React, Next.js, and TypeScript.',
     images: ['/og-image.png'],
     creator: '@shakurshirajul',
@@ -77,22 +86,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
         <link rel="canonical" href="https://shakurshirajul.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StructuredData />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

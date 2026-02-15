@@ -20,16 +20,12 @@
 - Proper priority and change frequency
 - Helps search engines discover pages
 
-### 4. **Manifest** (app/manifest.ts)
-- PWA support for mobile devices
-- Better mobile experience
-
-### 5. **Structured Data** (lib/schema.ts)
+### 4. **Structured Data** (lib/schema.ts)
 - JSON-LD Schema for Person
 - JSON-LD Schema for Website
 - Helps search engines understand your content
 
-### 6. **Page-specific Metadata** (blogs/page.tsx)
+### 5. **Page-specific Metadata** (blogs/page.tsx)
 - Blog page has unique metadata
 - Better context for search engines
 

@@ -27,6 +27,9 @@ export default function PublicProfile() {
                                         width={40}
                                         height={40}
                                         alt={social.name}
+                                        loading="lazy"
+                                        sizes="(max-width: 640px) 32px, (max-width: 768px) 36px, 40px"
+                                        quality={80}
                                         className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"
                                     />
                                 </Link>

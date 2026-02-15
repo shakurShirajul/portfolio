@@ -10,17 +10,23 @@ export default function Profile() {
     <div>
       <Card className="relative pt-0 overflow-hidden">
         <Image
-          alt="cover-photo"
-          src="https://images.unsplash.com/photo-1662116137244-b7c6fdc1ac35?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          width={677}
-          height={160}
+          alt="Abstract technology background with circuit board patterns"
+          src="https://images.unsplash.com/photo-1662116137244-b7c6fdc1ac35?q=75&w=800&auto=format&fit=crop"
+          width={800}
+          height={180}
+          priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
+          quality={75}
           className="relative z-20 h-28 sm:h-32 md:h-36 lg:h-40 w-full object-cover brightness-60 grayscale dark:brightness-40 rounded-t-xl"
         />
         <Image
-          src="https://res.cloudinary.com/djlqvqxao/image/upload/f_auto,fl_force_strip/v1769829077/ChatGPT_Image_Jan_24_2026_12_35_50_PM_e14fpa.png"
-          alt="Shakur"
+          src="https://res.cloudinary.com/djlqvqxao/image/upload/w_256,h_256,c_fill,f_auto,q_auto:good,fl_force_strip/v1769829077/ChatGPT_Image_Jan_24_2026_12_35_50_PM_e14fpa.png"
+          alt="Shirajul Islam Shakur - Profile Picture"
           width={128}
           height={128}
+          priority
+          sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px"
+          quality={90}
           className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 ml-4 sm:ml-5 md:ml-6 object-cover z-100"
         />
         <div className="ml-4 sm:ml-5 md:ml-6 pb-4 sm:pb-5 md:pb-6">

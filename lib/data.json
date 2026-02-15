@@ -1,7 +1,7 @@
 {
   "work": [
     {
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769829095/bitcode_odqm56.jpg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,c_fill,f_auto,q_auto:good/v1769829095/bitcode_odqm56.jpg",
       "company": "Bitcode",
       "link": "https://bitcode.pro",
       "role": "Junior Developer",
@@ -9,7 +9,7 @@
       "end": "Present"
     },
     {
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769829094/computerClub_ukdfvq.jpg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,c_fill,f_auto,q_auto:good/v1769829094/computerClub_ukdfvq.jpg",
       "company": "IIUC Computer Club",
       "link": "https://www.facebook.com/IIUCComputerClub.Official",
       "role": "Assistant Webmaster Secretary",
@@ -17,7 +17,7 @@
       "end": "July 2025"
     },
     {
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769829095/iiuc_tu7fpn.jpg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,c_fill,f_auto,q_auto:good/v1769829095/iiuc_tu7fpn.jpg",
       "company": "International Islamic University Chittagong",
       "link": "https://iiuc.ac.bd",
       "role": "Teaching Assistant",
@@ -27,7 +27,7 @@
   ],
   "education": [
     {
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769829095/iiuc_tu7fpn.jpg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,c_fill,f_auto,q_auto:good/v1769829095/iiuc_tu7fpn.jpg",
       "degree": "BSc in Computer Science",
       "institution": "International Islamic University Chittagong",
       "link": "https://iiuc.ac.bd",
@@ -39,128 +39,128 @@
     {
       "name": "Github",
       "link": "https://github.com/shakurShirajul",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769958489/github_vyjfmj.svg"
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_80,h_80,f_auto,q_auto/v1769958489/github_vyjfmj.svg"
     },
     {
       "name": "LinkedIn",
       "link": "https://linkedin.com/in/shakur-shirajul",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769958489/linkedin_ncqadd.svg"
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_80,h_80,f_auto,q_auto/v1769958489/linkedin_ncqadd.svg"
     },
     {
       "name": "Facebook",
       "link": "https://facebook.com/shakur.shirajul",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769958489/facebook_knphdk.svg"
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_80,h_80,f_auto,q_auto/v1769958489/facebook_knphdk.svg"
     },
     {
       "name": "Reddit",
       "link": "",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769958496/reddit_knrkw8.svg"
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_80,h_80,f_auto,q_auto/v1769958496/reddit_knrkw8.svg"
     }
   ],
   "stack": [
     {
       "name": "HTML5",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942448/html_h8p3g3.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942448/html_h8p3g3.svg",
       "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
     },
     {
       "name": "CSS3",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942507/css_d3sdzx.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942507/css_d3sdzx.svg",
       "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
       "name": "Tailwind CSS",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956553/tailwindcss_yiv14g.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956553/tailwindcss_yiv14g.svg",
       "link": "https://tailwindcss.com/"
     },
     {
       "name": "JavaScript",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942440/javascript_th1pam.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942440/javascript_th1pam.svg",
       "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
       "name": "TypeScript",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942442/typescript_bzxwwv.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942442/typescript_bzxwwv.svg",
       "link": "https://www.typescriptlang.org/"
     },
     {
       "name": "React",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942538/react_ji5gzq.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942538/react_ji5gzq.svg",
       "link": "https://react.dev/"
     },
     {
       "name": "React Router",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956957/react-router-light_h7zoo8.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956957/react-router-light_h7zoo8.svg",
       "link": "https://reactrouter.com/"
     },
     {
       "name": "Tanstack",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956553/tanstack-light_qpe3kr.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956553/tanstack-light_qpe3kr.svg",
       "link": "https://tanstack.com/"
     },
     {
       "name": "Firebase",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942529/firebase_zdr19w.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942529/firebase_zdr19w.svg",
       "link": "https://firebase.google.com/?utm_source=google&utm_medium=cpc&utm_campaign=Cloud-SS-DR-Firebase-FY26-global-gsem-1713590&utm_content=text-ad&utm_term=KW_firebase&gclsrc=aw.ds&gad_source=1&gad_campaignid=23417478209&gbraid=0AAAAADpUDOj3Gm6nEjUIWPpWZF7HOHcNy&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8hBV2DoswCr_knUSgO3tgtka8XnJCoidzHQszRqgvEq3FhC5YAbWlkaAjkvEALw_wcB"
     },
     {
       "name": "Node JS",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769955747/nodejs_odha1o.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769955747/nodejs_odha1o.svg",
       "link": "https://nodejs.org/en"
     },
     {
-      "name": "Mongodb",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942529/firebase_zdr19w.svg",
+      "name": "MongoDB",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942519/mongodb_b7yqw4.svg",
       "link": "https://www.mongodb.com/"
     },
     {
       "name": "Next JS",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956554/nextjs2-light_ew5iuz.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956554/nextjs2-light_ew5iuz.svg",
       "link": "https://nextjs.org/"
     },
     {
       "name": "Redux",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942539/redux_ca6lpv.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942539/redux_ca6lpv.svg",
       "link": "https://redux.js.org/"
     },
     {
       "name": "PHP",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942441/php_w5scwz.png",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,c_fill,f_auto,q_auto/v1769942441/php_w5scwz.png",
       "link": "https://www.php.net/"
     },
     {
       "name": "MySQL",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942523/mysql_auersw.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942523/mysql_auersw.svg",
       "link": "https://www.mysql.com/"
     },
     {
       "name": "Laravel",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956554/laravel_bcorae.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956554/laravel_bcorae.svg",
       "link": "https://laravel.com/"
     },
     {
       "name": "C",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942440/c_qal7cp.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942440/c_qal7cp.svg",
       "link": "https://devdocs.io/c/"
     },
     {
       "name": "C++",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942440/c_x4y2jn.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942440/c_x4y2jn.svg",
       "link": "https://isocpp.org/"
     },
     {
       "name": "Wordpress",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769942714/wordpress_nncof0.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942714/wordpress_nncof0.svg",
       "link": "https://wordpress.com/"
     },
     {
       "name": "Docker",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769956553/docker_j0dxnh.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769956553/docker_j0dxnh.svg",
       "link": "https://www.docker.com/"
     },
     {
       "name": "Git",
-      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/v1769957120/git_dfaidv.svg",
+      "logo": "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769957120/git_dfaidv.svg",
       "link": "https://git-scm.com/"
     }
   ]
