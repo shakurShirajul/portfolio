@@ -12,13 +12,13 @@ export default function PersonalDetails() {
                 <CardDescription className="space-y-2 sm:space-y-3">
                     <p className="flex items-center gap-2 text-xs sm:text-sm">
                         <Kbd className="shrink-0">
-                            <LucideMapPin size={16} className="sm:w-[18px] sm:h-[18px]" />
+                            <LucideMapPin size={16}  />
                         </Kbd>
                         <span className="wrap-break-word">Lives in Bangladesh</span>
                     </p>
                     <p className="flex items-center gap-2 text-xs sm:text-sm">
                         <Kbd className="shrink-0">
-                            <LucideMail size={16} className="sm:w-[18px] sm:h-[18px]" />
+                            <LucideMail size={16}  />
                         </Kbd>
                         <a
                             href="mailto:siirajulisllam@gmail.com"
@@ -29,7 +29,7 @@ export default function PersonalDetails() {
                     </p>
                     <p className="flex items-center gap-2 text-xs sm:text-sm">
                         <Kbd className="shrink-0">
-                            <LucidePhone size={16} className="sm:w-[18px] sm:h-[18px]" />
+                            <LucidePhone size={16}  />
                         </Kbd>
                         <span className="wrap-break-word">+8801747493837</span>
                     </p>
