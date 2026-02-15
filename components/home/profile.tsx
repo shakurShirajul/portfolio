@@ -50,7 +50,7 @@ export default function Profile() {
               alt="Shakur"
               width={128}
               height={128}
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 ml-4 sm:ml-5 md:ml-6 object-cover z-100 ring-4 ring-background"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 ml-4 sm:ml-5 md:ml-6 object-cover z-100"
             />
             <div className="ml-4 sm:ml-5 md:ml-6 pb-4 sm:pb-5 md:pb-6">
               <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl flex flex-wrap items-center gap-1.5 sm:gap-2 font-semibold">
@@ -65,7 +65,7 @@ export default function Profile() {
             </div>
           </Card>
           {/* This section will be shown on mobile and tablet */}
-          <div className="space-y-5">
+          <div className="space-y-5 lg:hidden">
             <PublicProfile/>
             <PersonalDetails/>
             <Experience/>
