@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Profile from "@/components/home/profile";
+import Contact from "@/components/home/contact";
 
 // Lazy load below-the-fold components
 const Stack = dynamic(() => import("@/components/home/stack"), {
@@ -23,6 +24,7 @@ export default function Home() {
         <Stack/>
         <Projects />
         <Blogs />
+        <Contact/>
       </div>
       <Sidebar />
     </div>
