@@ -1,3 +1,7 @@
+import { Card } from "../ui/card";
+
 export default function BlogCard() {
-  return <div></div>;
+  return <Card>
+    
+  </Card>;
 }
