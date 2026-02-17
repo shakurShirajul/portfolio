@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Profile from "@/components/home/profile";
 import Contact from "@/components/home/contact";
+import About from "@/components/home/about";
 
 // Lazy load below-the-fold components
 const Stack = dynamic(() => import("@/components/home/stack"), {
@@ -18,9 +19,12 @@ const Sidebar = dynamic(() => import("@/components/home/sidebar"), {
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-6  gap-5">
+    <div className="grid grid-cols-6 gap-5">
       <div className="col-span-6 lg:col-span-4 space-y-5">
         <Profile />
+        <div className="hidden lg:block">
+          <About />
+        </div>
         <Stack/>
         <Projects />
         <Blogs />

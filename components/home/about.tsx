@@ -1,0 +1,17 @@
+import { Card } from "../ui/card";
+
+export default function About() {
+  return (
+    <Card className="p-4 sm:p-5 md:p-6">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">About Me</h1>
+      <div>
+        <p className="w-full text-justify">
+          I&apos;m <strong>Shirajul Islam Shakur</strong>, a Full Stack Developer
+          specializing in the <strong>MERN stack</strong> and <strong>PHP Laravel</strong> development. I build scalable, responsive web applications that solve real-world problems and deliver exceptional user experiences. My expertise includes modern web
+          technologies such as <strong>React</strong>, <strong>Node.js</strong>,
+          <strong>Express.js</strong>, <strong>MongoDB</strong>, <strong>MySQL</strong>, <strong>Tailwind CSS</strong>, and <strong>TypeScript</strong>. As a competitive programmer, I bring strong problem-solving skills, algorithmic thinking, and performance-focused coding to every project. I&apos;m passionate about clean code, performance optimization, and staying current with emerging web technologies. Explore my projects to see my work in action, and feel free to connect if you&apos;d like to collaborate!
+        </p>
+      </div>
+    </Card>
+  );
+}
