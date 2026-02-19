@@ -117,7 +117,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
         <link rel="canonical" href="https://shakurshirajul.com" />
-        <meta name="google-site-verification" content="eJk6x7-QU9ciMLKNODSfn6NyYcwYoqaq5Fbs1mJ0PMg" />
+        <meta
+          name="google-site-verification"
+          content="eJk6x7-QU9ciMLKNODSfn6NyYcwYoqaq5Fbs1mJ0PMg"
+        />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link
           rel="preconnect"
@@ -131,7 +134,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <StructuredData />
         <ThemeProvider
