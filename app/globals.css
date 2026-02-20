@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -157,18 +157,29 @@
 
 @layer utilities {
   @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
-  
+
   .animate-shimmer {
     animation: shimmer 3s ease-in-out infinite;
   }
-  
+
   .berkshire-swash-regular {
     font-family: "Berkshire Swash", serif;
-    font-weight: 400;
-    font-style: normal;
+  }
+  .inter {
+    font-family: "Inter", sans-serif;
+  }
+  .manrope {
+    font-family: "Manrope", sans-serif;
+  }
+  .merriweather {
+    font-family: "Merriweather", serif;
   }
 }
 
