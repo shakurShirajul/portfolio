@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/navbar";
 import StructuredData from "@/components/shared/structured-data";
 import dynamic from "next/dynamic";
 import { Toaster } from "@/components/ui/sonner";
+import NotificationBar from "@/components/shared/notification-bar";
 
 // Lazy load Footer and KeyboardShortcut
 const Footer = dynamic(() => import("@/components/shared/footer"));
@@ -117,7 +118,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
         <link rel="canonical" href="https://shakurshirajul.com" />
-        <meta name="google-site-verification" content="eJk6x7-QU9ciMLKNODSfn6NyYcwYoqaq5Fbs1mJ0PMg" />
+        <meta
+          name="google-site-verification"
+          content="eJk6x7-QU9ciMLKNODSfn6NyYcwYoqaq5Fbs1mJ0PMg"
+        />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link
           rel="preconnect"
@@ -131,7 +135,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <StructuredData />
         <ThemeProvider
@@ -140,6 +144,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+            <NotificationBar />
           <main className="max-w-7xl mx-auto px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5 lg:px-8">
             <Navbar />
             {children}
