@@ -3,9 +3,9 @@ import { Card } from "../ui/card";
 export default function About() {
   return (
     <Card className="p-4 sm:p-5 md:p-6">
-      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">About Me</h1>
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold inter">About Me</h1>
       <div>
-        <p className="w-full text-justify">
+        <p className="w-full text-justify merriweather">
           I&apos;m Shirajul Islam Shakur, a Full Stack Developer specializing in
           the MERN stack and PHP Laravel development. I build scalable,
           responsive web applications that solve real-world problems and deliver

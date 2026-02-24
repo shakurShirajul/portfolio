@@ -31,13 +31,13 @@ export default function Profile() {
           className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 ml-4 sm:ml-5 md:ml-6 object-cover z-100"
         />
         <div className="px-5">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl flex flex-wrap items-center gap-1.5 sm:gap-2 font-semibold">
+          <h1 className="text-lg playfair-display sm:text-xl md:text-2xl lg:text-3xl flex flex-wrap items-center gap-1.5 sm:gap-2 font-semibold">
             Shirajul Islam Shakur
             <span className="flex items-center">
               <LucideVerified className="text-blue-500 stroke-blue-500 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </span>
           </h1>
-          <p className="text-xs sm:text-sm md:text-base mt-1 text-muted-foreground">
+          <p className="text-xs merriweather sm:text-sm md:text-base mt-1 text-muted-foreground">
             Fullstack Developer || Competitive Programmer || Tech Enthusiast
           </p>
         </div>

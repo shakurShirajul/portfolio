@@ -17,7 +17,7 @@ export default function Contact() {
   };
   return (
     <Card className="w-full p-4 sm:p-5 md:p-6">
-      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold playfair-display">
         Get In Touch
       </h1>
       <div>

@@ -28,11 +28,11 @@ export default function BlogCard({ blog }: { blog: Blog }) {
           </div>
         </div>
         <CardHeader className="pb-5">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground pb-2">
+          <div className="flex items-center gap-2 inter text-xs text-muted-foreground pb-2">
             <Calendar className="w-3.5 h-3.5" />
             <time dateTime={blog.date}>{formattedDate}</time>
           </div>
-          <CardTitle className="line-clamp-2 text-lg group-hover:text-primary transition-colors duration-200">
+          <CardTitle className="line-clamp-2 inter text-lg group-hover:text-primary transition-colors duration-200">
             {blog.title}
           </CardTitle>
         </CardHeader>

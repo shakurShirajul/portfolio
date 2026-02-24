@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Navbar from "@/components/shared/navbar";
@@ -13,22 +13,6 @@ const Footer = dynamic(() => import("@/components/shared/footer"));
 const KeyboardShortcut = dynamic(
   () => import("@/components/shared/keyboard-shortcut"),
 );
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shakurshirajul.com"),
@@ -134,9 +118,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-      >
+      <body>
         <StructuredData />
         <ThemeProvider
           attribute="class"
@@ -144,7 +126,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-            <NotificationBar />
+          <NotificationBar />
           <main className="max-w-7xl mx-auto px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-5 lg:px-8">
             <Navbar />
             {children}

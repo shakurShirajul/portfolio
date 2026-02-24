@@ -118,7 +118,7 @@ export default async function BlogPage({
           <div className="p-6 sm:p-8 md:p-10">
             <article>
               {/* Title */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl inter md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
                 {blog.title}
               </h1>
 
@@ -142,7 +142,7 @@ export default async function BlogPage({
 
               {/* Blog Content */}
               <div
-                className="text-xl prose prose-neutral dark:prose-invert prose-sm sm:prose-base md:prose-lg max-w-none
+                className="text-xl prose prose-neutral dark:prose-invert prose-sm sm:prose-base md:prose-lg max-w-none merriweather
                   prose-headings:font-bold prose-headings:tracking-tight
                   prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
                   prose-p:text-justify prose-p:leading-relaxed prose-p:mb-4

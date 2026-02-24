@@ -9,10 +9,10 @@ export default function Navbar() {
     <nav className="mb-3 sm:mb-4 md:mb-5">
       <div className="flex justify-between sm:justify-end gap-2 sm:gap-3 items-center flex-wrap">
         <div className="flex gap-3 sm:gap-4 items-center">
-          <Link href="/" className="text-sm sm:text-base font-medium hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
+          <Link href="/" className="text-sm sm:text-base font-medium inter hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
             Portfolio
           </Link>
-          <Link href="/blogs" className="text-sm sm:text-base font-medium hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
+          <Link href="/blogs" className="text-sm sm:text-base font-medium inter hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
             Blog
           </Link>
         </div>
