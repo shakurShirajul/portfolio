@@ -7,9 +7,9 @@ export default function PersonalDetails() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="text-base sm:text-lg md:text-xl">Personal Details</CardTitle>
+                <CardTitle className="text-base sm:text-lg md:text-xl playfair-display">Personal Details</CardTitle>
                 <Separator className="my-1 sm:my-2" />
-                <CardDescription className="space-y-2 sm:space-y-3">
+                <CardDescription className="space-y-2 sm:space-y-3 merriweather">
                     <p className="flex items-center gap-2 text-xs sm:text-sm">
                         <Kbd className="shrink-0">
                             <LucideMapPin size={16}  />

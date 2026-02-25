@@ -21,7 +21,7 @@ export default function Contact() {
         Get In Touch
       </h1>
       <div>
-        <form className="space-y-4" onSubmit={handleFormSubmit}>
+        <form className="space-y-4 merriweather" onSubmit={handleFormSubmit}>
           <fieldset className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input

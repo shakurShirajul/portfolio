@@ -2,7 +2,6 @@ import blogs from "@/lib/blogs.json";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Card } from "@/components/ui/card";
 import { Calendar, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -103,11 +102,11 @@ export default async function BlogPage({
       <div className="max-w-4xl mx-auto min-h-screen">
         <div className="space-y-4 sm:space-y-6">
           {/* Back Navigation */}
-          <Link className="cursor-pointer" href="/blogs">
+          <Link href="/blogs">
             <Button
               variant="ghost"
               size="sm"
-              className="group -ml-2 hover:bg-transparent"
+              className="group -ml-2 cursor-pointer hover:bg-transparent"
             >
               <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
               Back to Blogs

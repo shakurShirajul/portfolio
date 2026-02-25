@@ -11,7 +11,7 @@ export default function PublicProfile() {
     return (
         <Card className="w-full">
             <CardHeader className="">
-                <CardTitle className="text-base sm:text-lg md:text-xl">Public Profile</CardTitle>
+                <CardTitle className="text-base sm:text-lg playfair-display md:text-xl">Public Profile</CardTitle>
                 <Separator className="my-1 sm:my-2" />
                 <CardDescription className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start">
                     {socials.map((social) => (
@@ -35,7 +35,7 @@ export default function PublicProfile() {
                                 </Link>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>{social.name}</p>
+                                <p className="merriweather">{social.name}</p>
                             </TooltipContent>
                         </Tooltip>
                     ))}

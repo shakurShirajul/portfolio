@@ -17,16 +17,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Shirajul Islam Shakur</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-lg font-semibold playfair-display">Shirajul Islam Shakur</h3>
+            <p className="text-sm text-muted-foreground merriweather">
               Full Stack Developer passionate about building exceptional digital experiences with modern web technologies.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
-            <nav className="flex flex-col space-y-2 text-sm">
+            <h3 className="text-lg font-semibold playfair-display">Quick Links</h3>
+            <nav className="flex flex-col space-y-2 text-sm merriweather">
               <Link 
                 href="/" 
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Connect</h3>
+            <h3 className="text-lg font-semibold playfair-display">Connect</h3>
             <div className="flex gap-4">
               {data.socials
                 .filter((social) => social.link && social.name !== "Reddit")
@@ -75,10 +75,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>
+          <p className="merriweather">
             © {currentYear} Shakur Shirajul. All rights reserved.
           </p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-1 merriweather">
             Built with <Heart className="h-4 w-4 text-red-500 fill-current" /> using Next.js & TypeScript
           </p>
         </div>

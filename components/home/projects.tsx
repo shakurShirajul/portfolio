@@ -7,7 +7,7 @@ export default function Projects() {
         Projects
       </h1>
       <div className="py-8 sm:py-10">
-        <p className="text-center text-sm sm:text-base text-muted-foreground">
+        <p className="text-center text-sm sm:text-base text-muted-foreground merriweather">
           Coming Soon
         </p>
       </div>

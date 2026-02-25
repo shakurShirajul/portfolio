@@ -28,9 +28,9 @@ export default function Experience() {
         <Card>
             <CardHeader className="">
                 <div className="space-y-3">
-                    <CardTitle className="text-base sm:text-lg md:text-xl">Experience</CardTitle>
+                    <CardTitle className="text-base sm:text-lg md:text-xl playfair-display">Experience</CardTitle>
                     <Separator className="my-2" />
-                    <div className="space-y-3">
+                    <div className="space-y-3 merriweather">
                         {work.map((item: Work, index: number) => (
                             <div key={index} className="flex gap-2 sm:gap-3 items-center">
                                 <Link href={item.link} target="_blank" className="shrink-0">
@@ -65,9 +65,9 @@ export default function Experience() {
                     </div>
                 </div>
                 <div className="space-y-3 pt-2">
-                    <CardTitle className="text-base sm:text-lg md:text-xl">Education</CardTitle>
+                    <CardTitle className="text-base sm:text-lg md:text-xl playfair-display">Education</CardTitle>
                     <Separator className="my-2" />
-                    <div className="space-y-3">
+                    <div className="space-y-3 merriweather">
                         {education.map((item: Education, index: number) => (
                             <div key={index} className="flex gap-2 sm:gap-3 items-center">
                                 <Link href={item.link} target="_blank" className="shrink-0">

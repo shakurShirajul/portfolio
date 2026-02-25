@@ -8,7 +8,7 @@ export default function Stack() {
   const { stack } = data;
   return (
     <Card className="p-4 sm:p-5 md:p-6">
-      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
+      <h1 className="text-lg sm:text-xl md:text-2xl playfair-display font-semibold">
         Stack
       </h1>
       <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 justify-center items-center">
@@ -33,7 +33,7 @@ export default function Stack() {
               </Link>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{tech.name}</p>
+              <p className="merriweather">{tech.name}</p>
             </TooltipContent>
           </Tooltip>
         ))}
