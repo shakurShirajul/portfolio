@@ -128,7 +128,7 @@ export default async function BlogPage({
               </div>
 
               {/* Featured Image */}
-              <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] mb-6 sm:mb-8 rounded-lg overflow-hidden">
+              <div className="relative w-full h-50 sm:h-75 md:h-100 mb-6 sm:mb-8 rounded-lg overflow-hidden">
                 <Image
                   src={blog.thumbnail}
                   alt={blog.title}
