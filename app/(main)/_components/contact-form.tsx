@@ -161,7 +161,7 @@ export default function ContactForm() {
             />
           </div>
           <div className="flex justify-end pt-5">
-            <Button type="submit" size="sm" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting}>
               <Send />
               <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
             </Button>
