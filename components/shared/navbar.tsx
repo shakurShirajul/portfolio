@@ -1,29 +1,37 @@
-import { LucideSearch } from "lucide-react";
-import { Button } from "../ui/button";
-import ModeToggle from "./mode-toggle";
-import { Kbd } from "../ui/kbd";
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
+import { Download } from "lucide-react";
+import { navLinks } from "@/lib/data";
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
-    <nav className="mb-3 sm:mb-4 md:mb-5">
-      <div className="flex justify-between sm:justify-end gap-2 sm:gap-3 items-center flex-wrap">
-        <div className="flex gap-3 sm:gap-4 items-center">
-          <Link href="/" className="text-sm sm:text-base font-medium inter hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
-            Portfolio
-          </Link>
-          <Link href="/blogs" className="text-sm sm:text-base font-medium inter hover:text-primary transition-colors px-2 py-1.5 sm:px-3 sm:py-2 rounded-md hover:bg-accent">
-            Blog
-          </Link>
-        </div>
-        <div className="flex gap-1.5 sm:gap-2 items-center">
-          <Button variant="outline" className="rounded-xl text-sm sm:text-base h-9 sm:h-10 px-3 sm:px-4">
-            <LucideSearch className="w-4 h-4 sm:w-5 sm:h-5" />
-            <Kbd className="ml-1 hidden md:inline-flex text-xs">⌘ K</Kbd>
-          </Button>
-          <ModeToggle />
-        </div>
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-between max-w-4xl w-full mt-2 bg-background/80 backdrop-blur-sm rounded-full p-1">
+      <Link href="/" className="text-2xl font-pacifico">
+        shakur<span className="text-[#FF6A1C]">.</span>
+      </Link>
+      <div className="flex items-center gap-2 border rounded-full p-1">
+        {navLinks.map((link) => {
+          const active = pathname === link.href;
+          return (
+            <Link key={link.name} href={link.href}>
+              <Button
+                variant={active ? "secondary" : "ghost"}
+                className={`rounded-full ${active ? "text-foreground" : "text-muted-foreground"}`}
+                size="sm"
+              >
+                {link.name}
+              </Button>
+            </Link>
+          );
+        })}
+        <Button className="rounded-full text-sm" size="sm">
+          <Download />
+          <span>CV</span>
+        </Button>
       </div>
-    </nav>
+    </div>
   );
 }
