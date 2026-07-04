@@ -19,7 +19,7 @@ export default function Experiences() {
                 height={40}
                 className="rounded-lg shrink-0 h-8 w-8 md:h-10 md:w-10"
               />
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-1 md:gap-2 w-full">
+              <div className="flex justify-between items-start md:items-center gap-1 md:gap-2 w-full">
                 <div className="grid grid-cols-1">
                   <h2 className="font-semibold text-sm md:text-base">{experience.company}</h2>
                   <p className="text-xs md:text-sm text-muted-foreground">
