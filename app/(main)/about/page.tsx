@@ -2,6 +2,17 @@ import Image from "next/image";
 import shakur from "../../../public/shakur.png";
 import { socials } from "@/lib/data";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Shirajul Islam Shakur, a full-stack developer in Chattogram experienced with React, Next.js, Node.js, MongoDB, MySQL, and Laravel.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-8 w-full pt-30">

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "My Full-Stack Developer Journey: From Childhood Curiosity to Real-World Software",
+    "seoTitle": "My Full-Stack Developer Journey",
+    "slug": "my-full-stack-developer-journey",
+    "description": "How childhood curiosity, competitive programming, self-directed learning, and hands-on projects shaped my journey into full-stack development.",
+    "excerpt": "From exploring my first family computer to building production software, this is how curiosity and consistent practice shaped my career.",
+    "author": "Shirajul Islam Shakur",
+    "publishedAt": "2024-01-01",
+    "readingTime": "7 min read",
+    "category": "Developer journey",
+    "thumbnail": "https://res.cloudinary.com/djlqvqxao/image/upload/v1771350012/thumbnail-1_dhuvbt.png",
+    "thumbnailAlt": "Shirajul Islam Shakur's journey into full-stack development",
+    "content": "<p>Imagine turning hours of childhood gaming into a career in technology. That is what happened to me. My path was not a straight line or a single course; it grew through curiosity, consistent exploration, formal study, and hands-on practice.</p><h2>Early sparks: my first computer</h2><p>My journey started before I knew what programming was. When I was three or four, my father brought home a desktop computer for work. It came with games such as Road Rash, Virtua Cop, DX-Ball, and Need for Speed II. I loved playing them, but the computer itself fascinated me even more.</p><p>I watched my father and copied what he did: playing media, typing in Microsoft Word, and working with Excel. Learning by trial and error became a habit that still shapes how I approach unfamiliar technology.</p><h2>Discovering the internet</h2><p>Around 2008, we got a modem. Suddenly I could search for anything that entered my mind. Beyond downloading games, films, and songs, I became interested in websites and how information appeared online. That curiosity planted the first seeds of web development.</p><h2>From computer science to serious coding</h2><p>My interest led me to study Computer Science and Engineering. I learned C and C++, then practiced competitive programming on Codeforces and Beecrowd. Solving those problems strengthened my patience, logical thinking, and ability to break a difficult task into smaller steps.</p><h2>Learning full-stack web development</h2><p>I gradually moved toward web development. I learned HTML, CSS, Tailwind CSS, and JavaScript, followed by React for interactive user interfaces. Node.js, Express, and MongoDB helped me understand how a complete application works from browser to database.</p><p>Projects made the concepts real. Building features, diagnosing bugs, and connecting the front end to APIs taught me more than passively following tutorials. You can explore examples in my <a href=\"/#projects\">projects section</a>.</p><h2>Moving into professional development</h2><p>After graduating, I began working professionally and expanded into PHP and WordPress. I am currently building Bit CRM, a custom WordPress plugin. Working on production software has deepened my understanding of maintainability, deployment, and solving problems for real users.</p><h2>Skills I built along the way</h2><ul><li><strong>Front end:</strong> HTML, CSS, Tailwind CSS, JavaScript, and React</li><li><strong>Back end:</strong> Node.js, Express, and PHP</li><li><strong>Data:</strong> MongoDB and MySQL</li><li><strong>Problem-solving:</strong> algorithms, debugging, and competitive programming</li><li><strong>Working habits:</strong> self-directed learning, experimentation, and project delivery</li></ul><h2>What continues to drive me</h2><p>From copying actions on an old desktop to shipping production code, curiosity and persistence have powered every stage. Childhood games became an interest in computers, that interest became programming, and programming became a way to build useful software. The learning still has not stopped.</p><p>If you are beginning your own journey, keep exploring and build things you care about. Consistent, manageable steps add up.</p>",
+    "faqs": [
+      {
+        "question": "Can you become a full-stack developer without a degree?",
+        "answer": "Yes. A degree can provide structure, but many developers learn independently. Focus on web fundamentals, build a strong portfolio, and gain experience through real projects."
+      },
+      {
+        "question": "How long does it take to become a full-stack developer?",
+        "answer": "The timeline varies. Consistent learners can build job-ready foundations in 6–18 months by studying HTML, CSS, JavaScript, a front-end framework, back-end development, and databases while completing projects."
+      },
+      {
+        "question": "Which full-stack developer skills matter most?",
+        "answer": "Strong fundamentals in JavaScript, responsive design, React, server-side development, SQL or NoSQL databases, Git, deployment, debugging, and communication matter more than chasing every new tool."
+      },
+      {
+        "question": "Is competitive programming required for full-stack development?",
+        "answer": "No. It can strengthen logical thinking and algorithm skills, but practical web development, debugging, system design, and product experience are more directly relevant to everyday full-stack work."
+      },
+      {
+        "question": "How can a self-directed developer stay motivated?",
+        "answer": "Set small goals, build projects you care about, track visible progress, and learn with a community. Shipping a small working feature is often more motivating than passively completing another tutorial."
+      }
+    ]
+  }
+]

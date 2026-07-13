@@ -1,33 +1,74 @@
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
+import { blogs } from "@/lib/blogs";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Articles by Shirajul Islam Shakur about full-stack development, programming, practical projects, and lessons from a developer's journey.",
+  alternates: {
+    canonical: "/blogs",
+  },
+};
 
 export default function BlogsPage() {
-    return (
-    <div className="relative flex min-h-svh w-full items-center justify-center overflow-hidden bg-background px-4 py-24 sm:px-6 lg:px-8">
-            <div
-                className={cn(
-                    "absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]",
-                    "dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.055)_1px,transparent_1px)]",
-                    "bg-size-[44px_44px]",
-                )}
-            />
-            <div className="relative z-10 flex max-w-2xl flex-col items-center px-2 text-center sm:px-4">
-                <p className="font-pacifico text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
-                    Delicious content is simmering. Check back soon!
-                </p>
-                <Link
-                    href="/"
-                    className={cn(
-                        buttonVariants({ variant: "outline", size: "sm" }),
-                        "mt-6 rounded-full",
-                    )}
+  return (
+    <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-32 md:px-8">
+      <header className="max-w-2xl space-y-3">
+        <h1 className="font-gabarito text-4xl font-semibold tracking-tight">
+          Blog
+        </h1>
+        <p className="text-muted-foreground">
+          Notes on full-stack development, problem-solving, and lessons learned
+          while building real software.
+        </p>
+      </header>
+
+      <section aria-labelledby="latest-articles" className="mt-10">
+        <h2 id="latest-articles" className="sr-only">
+          Latest articles
+        </h2>
+        {blogs.map((blog) => (
+          <article
+            key={blog.slug}
+            className="overflow-hidden rounded-2xl border bg-card"
+          >
+            <Link href={`/blogs/${blog.slug}`} className="group md:flex">
+              <div className="relative aspect-video md:w-2/5 md:shrink-0">
+                <Image
+                  src={blog.thumbnail}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  className="object-cover transition-transform group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6">
+                <time
+                  dateTime={blog.publishedAt}
+                  className="text-sm text-muted-foreground"
                 >
-                    <ArrowLeft />
-                    Back home
-                </Link>
-            </div>
-        </div>
-    );
+                  {new Intl.DateTimeFormat("en-US", {
+                    dateStyle: "long",
+                    timeZone: "UTC",
+                  }).format(new Date(blog.publishedAt))}
+                </time>
+                <h2 className="mt-2 font-gabarito text-2xl font-semibold leading-tight">
+                  {blog.title}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {blog.excerpt}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium">
+                  Read article <ArrowRight className="size-4" aria-hidden="true" />
+                </span>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
 }

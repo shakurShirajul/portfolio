@@ -4,7 +4,7 @@ import { Project } from "@/shared/types";
 
 export default function Projects(){
     return (
-    <div className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8 space-y-4 ">
+    <div id="projects" className="max-w-4xl mx-auto w-full mt-10 scroll-mt-24 px-4 md:px-8 space-y-4 ">
       <h1 className="font-gabarito text-2xl font-semibold">Projects</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 {

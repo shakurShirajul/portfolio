@@ -5,16 +5,41 @@ import { ArrowLeft, ExternalLink, Code2 } from "lucide-react";
 import { projects } from "@/lib/data";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+
+type ProjectPageProps = {
+  params: Promise<{ id: string }>;
+};
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: String(p.id) }));
 }
 
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find((item) => String(item.id) === id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  return {
+    title: project.name,
+    description: project.description,
+    alternates: {
+      canonical: `/projects/${project.id}`,
+    },
+  };
+}
+
 export default async function ProjectDetailPage({
   params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+}: ProjectPageProps) {
   const { id } = await params;
   const project = projects.find((p) => String(p.id) === id);
 
