@@ -11,6 +11,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -42,7 +43,7 @@ const stardosStencil = Stardos_Stencil({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shakurshirajul.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Shirajul Islam Shakur | Full-Stack Developer",
     template: "%s | Shirajul Islam Shakur",

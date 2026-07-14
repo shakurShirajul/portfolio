@@ -4,12 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { blogs } from "@/lib/blogs";
+import { SITE_URL } from "@/lib/site";
 
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
 };
-
-const siteUrl = "https://shakurshirajul.com";
 
 export function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
@@ -32,7 +31,7 @@ export async function generateMetadata({
     title: blog.seoTitle,
     description: blog.description,
     alternates: { canonical: `/blogs/${blog.slug}` },
-    authors: [{ name: blog.author, url: siteUrl }],
+    authors: [{ name: blog.author, url: SITE_URL }],
     openGraph: {
       type: "article",
       url: `/blogs/${blog.slug}`,
@@ -57,7 +56,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
 
   if (!blog) notFound();
 
-  const articleUrl = `${siteUrl}/blogs/${blog.slug}`;
+  const articleUrl = `${SITE_URL}/blogs/${blog.slug}`;
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -67,8 +66,8 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
       image: blog.thumbnail,
       datePublished: blog.publishedAt,
       mainEntityOfPage: articleUrl,
-      author: { "@type": "Person", name: blog.author, url: siteUrl },
-      publisher: { "@type": "Person", name: blog.author, url: siteUrl },
+      author: { "@type": "Person", name: blog.author, url: SITE_URL },
+      publisher: { "@type": "Person", name: blog.author, url: SITE_URL },
     },
     ...(blog.faqs.length > 0
       ? [
