@@ -47,7 +47,7 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
             </span>
           )}
         </div>
-        <div className="mt-auto flex justify-center pt-2">
+        <div className="mt-auto flex justify-start pt-2">
           <span className={buttonVariants({ size: "sm" })}>
             View Details
             <ArrowUpRight aria-hidden="true" className="size-4 text-[#FF6A1C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
