@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -285,7 +286,17 @@ export default function ContactForm() {
             ) : null}
           </div>
 
-          <div className="flex justify-end pt-5">
+          <div className="flex flex-col gap-4 pt-3 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-sm text-xs leading-5 text-muted-foreground">
+              Your details are used only to respond to your message. Read the{" "}
+              <Link
+                href="/privacy"
+                className="font-medium text-foreground underline underline-offset-4"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </p>
             <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <LoaderCircle

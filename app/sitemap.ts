@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.6,
     },
+    {
+      url: `${SITE_URL}/privacy`,
+      lastModified: "2026-07-14",
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({

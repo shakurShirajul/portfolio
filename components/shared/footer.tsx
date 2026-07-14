@@ -45,9 +45,15 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <p className="text-xs text-center mt-5 text-muted-foreground">
+        <p className="mt-5 text-center text-xs text-muted-foreground">
           &copy; {new Date().getFullYear()} Shirajul Islam Shakur. All rights
-          reserved.
+          reserved.{" "}
+          <Link
+            href="/privacy"
+            className="font-medium text-foreground underline underline-offset-4"
+          >
+            Privacy
+          </Link>
         </p>
       </div>
     </footer>
