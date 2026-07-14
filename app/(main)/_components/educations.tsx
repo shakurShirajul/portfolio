@@ -3,8 +3,13 @@ import Image from "next/image";
 
 export default function Educations() {
   return (
-    <div className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8">
-      <h1 className="font-gabarito text-2xl font-semibold">My Educations</h1>
+    <section
+      aria-labelledby="education-heading"
+      className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8"
+    >
+      <h2 id="education-heading" className="font-gabarito text-2xl font-semibold">
+        Education
+      </h2>
       <div>
         {educations.map((education, index) => (
           <div
@@ -21,9 +26,9 @@ export default function Educations() {
               />{" "}
               <div className="flex justify-between w-full">
                 <div className="grid grid-cols-1">
-                  <h2 className="font-semibold text-sm md:text-base">
+                  <h3 className="font-semibold text-sm md:text-base">
                     {education.degree}
-                  </h2>
+                  </h3>
                   <p className="text-xs md:text-sm text-muted-foreground">
                     {education.institution}
                   </p>
@@ -36,6 +41,6 @@ export default function Educations() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

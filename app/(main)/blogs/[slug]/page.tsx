@@ -91,7 +91,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
   }).format(new Date(blog.publishedAt));
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 pb-20 pt-28 md:px-8">
+    <div className="mx-auto w-full max-w-3xl px-4 pb-20 pt-28 md:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -159,6 +159,6 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
           </section>
         ) : null}
       </article>
-    </main>
+    </div>
   );
 }

@@ -63,12 +63,18 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8 space-y-6">
-      <h1 className="font-gabarito text-2xl font-semibold">Get In Touch</h1>
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="max-w-4xl mx-auto w-full mt-10 scroll-mt-24 px-4 md:px-8 space-y-6"
+    >
+      <h2 id="contact-heading" className="font-gabarito text-2xl font-semibold">
+        Get in Touch
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         <aside className="md:col-span-2 border rounded-lg p-5 space-y-5">
-          <h2 className="font-gabarito text-lg font-semibold">Connect</h2>
+          <h3 className="font-gabarito text-lg font-semibold">Connect</h3>
 
           <ul className="divide-y divide-border">
             {socials.map((social) => (
@@ -168,6 +174,6 @@ export default function ContactForm() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

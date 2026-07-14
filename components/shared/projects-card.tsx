@@ -2,7 +2,7 @@ import { Project } from "@/shared/types";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 
 interface ProjectCardProps {
   project: Project;
@@ -27,7 +27,7 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
           <h3 className="font-gabarito text-lg font-semibold leading-tight">
             {project.name}
           </h3>
-          <ArrowUpRight className="size-4 text-[#FF6A1C] shrink-0  transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowUpRight aria-hidden="true" className="size-4 text-[#FF6A1C] shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
         <p className="line-clamp-2 text-sm text-muted-foreground">
           {project.description}
@@ -47,11 +47,11 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
             </span>
           )}
         </div>
-        <div className="mt-auto pt-2">
-          <Button className="m-auto">
+        <div className="mt-auto flex justify-center pt-2">
+          <span className={buttonVariants({ size: "sm" })}>
             View Details
-            <ArrowUpRight className="size-4 text-[#FF6A1C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Button>
+            <ArrowUpRight aria-hidden="true" className="size-4 text-[#FF6A1C] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </span>
         </div>
       </div>
     </Link>

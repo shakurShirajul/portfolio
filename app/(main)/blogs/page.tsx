@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function BlogsPage() {
   return (
-    <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-32 md:px-8">
+    <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-32 md:px-8">
       <header className="max-w-2xl space-y-3">
         <h1 className="font-gabarito text-4xl font-semibold tracking-tight">
           Blog
@@ -69,6 +69,6 @@ export default function BlogsPage() {
           </article>
         ))}
       </section>
-    </main>
+    </div>
   );
 }

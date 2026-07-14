@@ -36,7 +36,7 @@ export default function AboutPage() {
           <p className="text-muted-foreground">I develop website, play games and read books.</p>
         </div>
         <div >
-          <p className="mb-4">The Story Of Me</p>
+          <h2 className="mb-4 font-gabarito text-xl font-semibold">The Story of Me</h2>
           <p className="text-muted-foreground">
             I started programming with a simple curiosity about how websites
             work. That curiosity quickly turned into competitive programming,
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
       </div>
       <div className="mt-10 space-y-4">
-        <h1>Get In Touch</h1>
+        <h2 className="font-gabarito text-xl font-semibold">Get in Touch</h2>
         <div className="flex gap-4">
           {
             socials.map((social)=>

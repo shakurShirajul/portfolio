@@ -3,8 +3,13 @@ import Image from "next/image";
 
 export default function Experiences() {
   return (
-    <div className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8">
-      <h1 className="font-gabarito text-2xl font-semibold">My Experiences</h1>
+    <section
+      aria-labelledby="experience-heading"
+      className="max-w-4xl mx-auto w-full mt-10 px-4 md:px-8"
+    >
+      <h2 id="experience-heading" className="font-gabarito text-2xl font-semibold">
+        Experience
+      </h2>
       <div>
         {experiences.map((experience, index) => (
           <div
@@ -21,7 +26,7 @@ export default function Experiences() {
               />
               <div className="flex justify-between items-start md:items-center gap-1 md:gap-2 w-full">
                 <div className="grid grid-cols-1">
-                  <h2 className="font-semibold text-sm md:text-base">{experience.company}</h2>
+                  <h3 className="font-semibold text-sm md:text-base">{experience.company}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground">
                     {experience.designation}
                   </p>
@@ -34,6 +39,6 @@ export default function Experiences() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

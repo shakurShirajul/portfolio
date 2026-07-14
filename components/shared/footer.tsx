@@ -1,13 +1,14 @@
 import { Download } from "lucide-react";
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { navLinks, socials } from "@/lib/data";
 import Link from "next/link";
 import { Social } from "@/shared/types";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Footer() {
   return (
-    <div className="py-6 max-w-4xl mx-auto w-full px-4 md:px-8 mt-10">
+    <footer className="py-6 max-w-4xl mx-auto w-full px-4 md:px-8 mt-10">
       <div className="flex justify-between items-start"> 
         <div className="font-gabarito space-y-5">
           <h5>Shirajul Islam Shakur</h5>
@@ -33,10 +34,14 @@ export default function Footer() {
                   )
                 }
             </div>
-            <Button className="rounded-full text-sm" size="sm">
-                <Download />
+            <a
+              href="/shirajul-islam-shakur-cv.pdf"
+              download
+              className={cn(buttonVariants({ size: "sm" }), "rounded-full text-sm")}
+            >
+                <Download aria-hidden="true" />
                 <span>CV</span>
-            </Button>
+            </a>
         </div>
       </div>
       <div>
@@ -45,6 +50,6 @@ export default function Footer() {
           reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
