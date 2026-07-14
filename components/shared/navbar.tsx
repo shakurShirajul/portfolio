@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { Download, Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -32,17 +33,19 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <ThemeToggle compact />
           <Button className="rounded-full text-sm" size="sm">
             <Download />
             <span>CV</span>
           </Button>
         </div>
 
-        <div className="relative md:hidden">
+        <div className="relative flex items-center gap-1.5 md:hidden">
+          <ThemeToggle />
           <Button
             type="button"
             variant="outline"
-            size="icon-sm"
+            size="icon-lg"
             className="rounded-full border-border/60 bg-background/90"
             aria-label="Open navigation menu"
             aria-expanded={menuOpen}
