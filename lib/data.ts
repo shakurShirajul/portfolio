@@ -195,52 +195,87 @@ export const profileInfo: ProfileInfo[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    image: "https://placehold.co/600x400.png",
-    name: "Urban Dwell",
+    slug: "bit-crm",
+    image: "/bit-crm-landing-page.webp",
+    ogImage: "/bit-crm-og.webp",
+    isLongScreenshot: true,
+    name: "Bit CRM",
     description:
-      "UrbanDwell is a Building Management System (BMS) web application designed to simplify apartment management processes. It provides a seamless experience for users to explore apartments, manage agreements, and handle payments effectively.",
-    liveLink: "https://urbandwell.vercel.app",
-    github_client: "https://github.com/shakurShirajul/urban-dwell-client",
-    techStack: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    challenges:
-      "Handling role-based access for admins, members, and unauthorized users while keeping the UI intuitive was complex. Synchronizing agreement and payment states so they never drift out of sync required careful state management, and optimizing MongoDB queries to keep apartment listings fast as data grew took several iterations.",
-    futurePlans:
-      "Add an automated rent reminder via email/SMS, introduce an admin analytics dashboard for occupancy and revenue, and refactor the frontend to Next.js for better SEO and SSR performance.",
-  },
-  {
-    id: 2,
-    image: "https://placehold.co/600x400.png",
-    name: "DevNotes",
-    description:
-      "DevNotes is a markdown-first note-taking app built for developers. It supports syntax-highlighted code blocks, tag-based organization, full-text search, and a distraction-free writing mode with live preview.",
-    liveLink: "https://devnotes.vercel.app",
-    github_client: "https://github.com/shakurShirajul/devnotes-client",
+      "Bit CRM is a WordPress plugin that runs an entire sales pipeline inside the WordPress admin — leads, contacts, deals, invoices, and client management, with a visual workflow builder for automation and native WooCommerce sync. It ships an MCP server and a built-in AI assistant, so the CRM can be driven directly from tools like Claude and ChatGPT.",
+    seoDescription:
+      "A WordPress CRM plugin with leads, deals, invoices, a visual workflow builder, WooCommerce sync, an MCP server, and a built-in AI assistant.",
+    liveLink: "https://bit-crm.com",
+    liveLinkLabel: "Visit Website",
+    github_client:
+      "https://wordpress.org/plugins/bit-crm-sales-marketing-automation/",
     techStack: [
-      "Next.js",
+      "React",
       "TypeScript",
-      "Prisma",
-      "PostgreSQL",
+      "WordPress",
       "Tailwind CSS",
+      "Zustand",
+      "TanStack Query",
+      "Ant Design",
+    ],
+    contributions: [
+      "Plugin dashboard",
+      "Client portal",
+      "Invoice module",
+      "Calendar view",
+      "Activities — tasks, meetings, and calls",
+      "Onboarding flow",
+      "General settings",
+      "Part of the visual workflow builder",
+      "Part of the MCP server and AI assistant",
+      "Integration with Bit Form, Bit Flows, and Bit Integrations",
     ],
     challenges:
-      "Building a reliable full-text search that handled code snippets without breaking on special characters was tricky. Caching markdown parses while keeping the preview in sync with the editor required a careful memoization strategy, and designing a tag system that scaled without duplicate or orphan tags took more iteration than expected.",
+      "Building a React application inside the WordPress admin meant working around a host environment we do not control — global styles, enqueued scripts, and an admin shell that expects to own the page. Integrating with Bit Form, Bit Flows, and Bit Integrations meant matching conventions set by plugins that were already shipping, so the CRM had to fit their data flow rather than impose its own. Across the dashboard, calendar, and activity views, keeping server state in TanStack Query separate from local UI state in Zustand was what kept the interface predictable as the module count grew.",
     futurePlans:
-      "Add real-time collaborative editing via WebSockets, introduce per-note version history, and ship a browser extension for clipping code snippets from any page.",
+      "Bit CRM is actively maintained, and we ship improvements regularly based on what users tell us they need. Every release is shaped by real feedback from the people running their business on it — and there is still plenty we want to build.",
   },
-  {
-    id: 3,
-    image: "https://placehold.co/600x400.png",
-    name: "ShopSphere",
-    description:
-      "ShopSphere is a full-featured e-commerce platform with product catalog, cart, Stripe checkout, order tracking, and an admin dashboard for inventory and sales analytics.",
-    liveLink: "https://shopsphere.vercel.app",
-    github_client: "https://github.com/shakurShirajul/shopsphere-client",
-    techStack: ["React", "Redux", "Node.js", "Express.js", "MongoDB", "Stripe"],
-    challenges:
-      "Keeping the cart state consistent across tabs and after page reloads needed localStorage hydration with Redux. Stripe webhook handling for asynchronous payment events had to be idempotent to avoid double-processing, and image-heavy product pages required lazy loading and responsive images to keep the LCP under control.",
-    futurePlans:
-      "Implement a product recommendation engine based on browsing history, add wishlist sharing, and migrate the admin dashboard to server components for faster initial load.",
-  },
+  // Placeholder projects, hidden until replaced with real work.
+  // Uncomment to restore; their redirects in next.config.ts still point here.
+  // {
+  //   id: 2,
+  //   slug: "urban-dwell",
+  //   seoDescription:
+  //     "A building management system for apartment listings, rental agreements, and payments, built with React, Node.js, and MongoDB.",
+  //   image: "https://placehold.co/600x400.png",
+  //   name: "Urban Dwell",
+  //   description:
+  //     "UrbanDwell is a Building Management System (BMS) web application designed to simplify apartment management processes. It provides a seamless experience for users to explore apartments, manage agreements, and handle payments effectively.",
+  //   liveLink: "https://urbandwell.vercel.app",
+  //   github_client: "https://github.com/shakurShirajul/urban-dwell-client",
+  //   techStack: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+  //   challenges:
+  //     "Handling role-based access for admins, members, and unauthorized users while keeping the UI intuitive was complex. Synchronizing agreement and payment states so they never drift out of sync required careful state management, and optimizing MongoDB queries to keep apartment listings fast as data grew took several iterations.",
+  //   futurePlans:
+  //     "Add an automated rent reminder via email/SMS, introduce an admin analytics dashboard for occupancy and revenue, and refactor the frontend to Next.js for better SEO and SSR performance.",
+  // },
+  // {
+  //   id: 3,
+  //   slug: "devnotes",
+  //   seoDescription:
+  //     "A markdown-first note-taking app for developers with syntax-highlighted code blocks, tag organization, and full-text search.",
+  //   image: "https://placehold.co/600x400.png",
+  //   name: "DevNotes",
+  //   description:
+  //     "DevNotes is a markdown-first note-taking app built for developers. It supports syntax-highlighted code blocks, tag-based organization, full-text search, and a distraction-free writing mode with live preview.",
+  //   liveLink: "https://devnotes.vercel.app",
+  //   github_client: "https://github.com/shakurShirajul/devnotes-client",
+  //   techStack: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "Prisma",
+  //     "PostgreSQL",
+  //     "Tailwind CSS",
+  //   ],
+  //   challenges:
+  //     "Building a reliable full-text search that handled code snippets without breaking on special characters was tricky. Caching markdown parses while keeping the preview in sync with the editor required a careful memoization strategy, and designing a tag system that scaled without duplicate or orphan tags took more iteration than expected.",
+  //   futurePlans:
+  //     "Add real-time collaborative editing via WebSockets, introduce per-note version history, and ship a browser extension for clipping code snippets from any page.",
+  // },
 ];
 
 export const socials: Social[] = [

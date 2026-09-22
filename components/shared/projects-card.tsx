@@ -10,17 +10,28 @@ interface ProjectCardProps {
 export default function ProjectsCard({ project }: ProjectCardProps) {
   return (
     <Link
-      href={`/projects/${project.id}`}
+      href={`/projects/${project.slug}`}
       className="group relative flex h-full flex-col overflow-hidden rounded-lg border bg-card text-card-foreground transition-colors hover:border-foreground/20"
     >
       <div className="relative aspect-4/3 overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.name}
-          fill
-          sizes="(max-width: 1024px) 100vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+        {project.isLongScreenshot ? (
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={900}
+            height={9805}
+            sizes="(max-width: 1024px) 100vw, 33vw"
+            className="absolute inset-x-0 top-0 w-full h-auto transition-transform duration-6000 ease-linear group-hover:translate-y-[-93.1%] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
+          />
+        ) : (
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            sizes="(max-width: 1024px) 100vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="flex items-center justify-between gap-2">

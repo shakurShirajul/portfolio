@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${SITE_URL}/projects/${project.id}`,
+    url: `${SITE_URL}/projects/${project.slug}`,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
