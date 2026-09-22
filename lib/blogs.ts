@@ -17,10 +17,14 @@ export interface Blog {
   updatedAt?: string;
   readingTime: string;
   category: string;
-  thumbnail: string;
-  thumbnailAlt: string;
+  /** Optional. Posts without one fall back to the site's default OG card. */
+  thumbnail?: string;
+  thumbnailAlt?: string;
   content: string;
   faqs: BlogFaq[];
 }
 
-export const blogs: Blog[] = blogData;
+/** Newest first, so the index and sitemap do not depend on hand-ordering. */
+export const blogs: Blog[] = [...blogData].sort((a, b) =>
+  b.publishedAt.localeCompare(a.publishedAt),
+);

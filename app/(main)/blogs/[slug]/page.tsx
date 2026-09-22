@@ -40,13 +40,15 @@ export async function generateMetadata({
       description: blog.description,
       publishedTime: blog.publishedAt,
       authors: [blog.author],
-      images: [{ url: blog.thumbnail, alt: blog.thumbnailAlt }],
+      images: blog.thumbnail
+        ? [{ url: blog.thumbnail, alt: blog.thumbnailAlt ?? blog.title }]
+        : ["/opengraph-image"],
     },
     twitter: {
       card: "summary_large_image",
       title: blog.title,
       description: blog.description,
-      images: [blog.thumbnail],
+      images: [blog.thumbnail ?? "/opengraph-image"],
     },
   };
 }
@@ -67,7 +69,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
       "@type": "BlogPosting",
       headline: blog.title,
       description: blog.description,
-      image: blog.thumbnail,
+      image: blog.thumbnail ?? `${SITE_URL}/opengraph-image`,
       datePublished: blog.publishedAt,
       dateModified: blog.updatedAt ?? blog.publishedAt,
       mainEntityOfPage: articleUrl,
@@ -147,16 +149,18 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
             <span aria-hidden="true">·</span>
             <span>{blog.readingTime}</span>
           </div>
-          <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl border">
-            <Image
-              src={blog.thumbnail}
-              alt={blog.thumbnailAlt}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
-            />
-          </div>
+          {blog.thumbnail && (
+            <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl border">
+              <Image
+                src={blog.thumbnail}
+                alt={blog.thumbnailAlt ?? ""}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          )}
         </header>
 
         <div

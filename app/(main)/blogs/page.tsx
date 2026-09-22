@@ -44,7 +44,7 @@ export default function BlogsPage() {
         description: blog.description,
         url: `${SITE_URL}/blogs/${blog.slug}`,
         datePublished: blog.publishedAt,
-        image: blog.thumbnail,
+        image: blog.thumbnail ?? `${SITE_URL}/opengraph-image`,
         author: { "@id": `${SITE_URL}/#person` },
       })),
     },
@@ -81,7 +81,7 @@ export default function BlogsPage() {
         </p>
       </header>
 
-      <section aria-labelledby="latest-articles" className="mt-10">
+      <section aria-labelledby="latest-articles" className="mt-10 space-y-6">
         <h2 id="latest-articles" className="sr-only">
           Latest articles
         </h2>
@@ -91,15 +91,17 @@ export default function BlogsPage() {
             className="overflow-hidden rounded-2xl border bg-card"
           >
             <Link href={`/blogs/${blog.slug}`} className="group md:flex">
-              <div className="relative aspect-video md:w-2/5 md:shrink-0">
-                <Image
-                  src={blog.thumbnail}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 360px"
-                  className="object-cover transition-transform group-hover:scale-[1.02]"
-                />
-              </div>
+              {blog.thumbnail && (
+                <div className="relative aspect-video md:w-2/5 md:shrink-0">
+                  <Image
+                    src={blog.thumbnail}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    className="object-cover transition-transform group-hover:scale-[1.02]"
+                  />
+                </div>
+              )}
               <div className="flex flex-col justify-center p-6">
                 <time
                   dateTime={blog.publishedAt}
