@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
     // AVIF first, WebP as fallback: smaller payloads for the Cloudinary
     // logos and the project screenshots.
     formats: ["image/avif", "image/webp"],
+    // Next 16 restricts `quality` to this allowlist (default [75]); a prop
+    // outside it is silently coerced. 70 is for the long project screenshots,
+    // where the card renders small enough that the difference is invisible.
+    qualities: [70, 75],
     // Remote images are immutable (Cloudinary URLs are version-pinned), so
     // cache optimized variants for a day rather than the 60s default.
     minimumCacheTTL: 86400,
