@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 
+const title = "Privacy Policy";
+const description =
+  "How information is handled on Shirajul Islam Shakur's portfolio — contact form submissions and cookieless Vercel Web Analytics.";
+
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How information is handled on Shirajul Islam Shakur's portfolio — contact form submissions and cookieless Vercel Web Analytics.",
+  title,
+  description,
   alternates: {
     canonical: "/privacy",
+  },
+  openGraph: {
+    type: "website",
+    url: "/privacy",
+    title,
+    description,
+    // Declaring openGraph replaces the root block wholesale, so the shared
+    // card has to be named explicitly or this page ships with no image.
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
 };
 

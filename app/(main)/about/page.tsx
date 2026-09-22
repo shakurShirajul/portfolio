@@ -24,6 +24,13 @@ export const metadata: Metadata = {
       "Full-stack developer in Chattogram building production software with React, Next.js, TypeScript, Node.js, and Laravel.",
     images: ["/opengraph-image"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Shirajul Islam Shakur",
+    description:
+      "Full-stack developer in Chattogram building production software with React, Next.js, TypeScript, Node.js, and Laravel.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function AboutPage() {

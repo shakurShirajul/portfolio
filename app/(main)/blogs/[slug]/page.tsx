@@ -39,6 +39,7 @@ export async function generateMetadata({
       title: blog.title,
       description: blog.description,
       publishedTime: blog.publishedAt,
+      modifiedTime: blog.updatedAt ?? blog.publishedAt,
       authors: [blog.author],
       images: blog.thumbnail
         ? [{ url: blog.thumbnail, alt: blog.thumbnailAlt ?? blog.title }]
