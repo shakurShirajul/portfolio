@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+// Without this the 404 inherits the root title, description and
+// `canonical: "/"` — which tells Google every bad URL is the homepage.
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  description: "This page does not exist or has been moved.",
+  robots: { index: false, follow: true },
+  alternates: { canonical: undefined },
+};
 
 export default function NotFound() {
   return (

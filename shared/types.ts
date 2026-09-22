@@ -1,5 +1,3 @@
-import { LucideIcon } from "lucide-react";
-
 export interface Experience {
   company: string;
   designation: string;
@@ -14,11 +12,6 @@ export interface Education {
   institution: string;
   link: string;
   duration: string;
-}
-
-export interface ProfileInfo {
-  title: string;
-  icon: LucideIcon;
 }
 
 export interface Project {

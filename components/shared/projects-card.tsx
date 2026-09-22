@@ -20,7 +20,12 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
             alt=""
             width={900}
             height={9805}
-            sizes="(max-width: 1024px) 100vw, 33vw"
+            loading="lazy"
+            quality={70}
+            // The card is at most ~380px wide, but the 1:10.9 aspect ratio
+            // makes Next pick a far larger candidate from `width`. Cap it:
+            // w=640 halves the payload with no visible loss at this size.
+            sizes="(max-width: 1024px) 640px, 400px"
             className="absolute inset-x-0 top-0 w-full h-auto transition-transform duration-6000 ease-linear group-hover:translate-y-[-93.1%] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
           />
         ) : (

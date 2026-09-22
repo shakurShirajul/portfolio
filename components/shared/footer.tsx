@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="py-6 max-w-4xl mx-auto w-full px-4 md:px-8 mt-10">
       <div className="flex justify-between items-start"> 
         <div className="font-gabarito space-y-5">
-          <h5>Shirajul Islam Shakur</h5>
+          <p className="font-semibold">Shirajul Islam Shakur</p>
           <ul className="flex text-sm gap-4 text-muted-foreground">
             {
               navLinks.map((navLink)=>
@@ -28,9 +28,16 @@ export default function Footer() {
             <div className="flex text-sm gap-2">
                 {
                   socials.map((social: Social)=>
-                    <Link key={social.name} href={social.link} target="_blank" className="transition-transform hover:scale-110 active:scale-95">
-                      <Image src={social.logo} alt={social.name} width={20} height={20}/>
-                    </Link>
+                    <a
+                      key={social.name}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${social.name} profile`}
+                      className="transition-transform hover:scale-110 active:scale-95"
+                    >
+                      <Image src={social.logo} alt="" width={20} height={20} />
+                    </a>
                   )
                 }
             </div>

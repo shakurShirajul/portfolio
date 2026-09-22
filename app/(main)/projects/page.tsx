@@ -19,11 +19,15 @@ export const metadata: Metadata = {
     url: "/projects",
     title,
     description,
+    // Declaring openGraph replaces the root block wholesale, so the shared
+    // card has to be named explicitly or this page ships with no image.
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["/opengraph-image"],
   },
 };
 

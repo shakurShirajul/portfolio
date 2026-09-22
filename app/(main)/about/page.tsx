@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: "About Shirajul Islam Shakur",
     description:
       "Full-stack developer in Chattogram building production software with React, Next.js, TypeScript, Node.js, and Laravel.",
+    images: ["/opengraph-image"],
   },
 };
 

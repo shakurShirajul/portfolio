@@ -54,6 +54,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // Site-wide social defaults. Routes that set their own openGraph/twitter
+  // override these; the opengraph-image.tsx card applies to any route that
+  // does not ship its own image.
+  openGraph: {
+    type: "website",
+    siteName: "Shirajul Islam Shakur",
+    locale: "en_US",
+    url: "/",
+    title: "Shirajul Islam Shakur | Full-Stack Developer",
+    description:
+      "Portfolio of Shirajul Islam Shakur, a full-stack developer in Chattogram building responsive web applications with React, Next.js, Node.js, and Laravel.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shirajul Islam Shakur | Full-Stack Developer",
+    description:
+      "Full-stack developer in Chattogram building production web applications with React, Next.js, Node.js, and Laravel.",
+  },
   verification: {
     google: "eJk6x7-QU9ciMLKNODSfn6NyYcwYoqaq5Fbs1mJ0PMg",
   },

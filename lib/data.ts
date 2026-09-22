@@ -1,17 +1,20 @@
 import {
   Education,
   Experience,
-  ProfileInfo,
   Project,
   NavLink,
   Social,
 } from "@/shared/types";
-import { Clock, Code2Icon, Link, Mail, MapPinIcon, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const navLinks: NavLink[] = [
   {
     name: "Home",
     href: "/",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
   },
   {
     name: "About",
@@ -101,7 +104,7 @@ export const stacks = [
   {
     name: "Firebase",
     logo: "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769942529/firebase_zdr19w.svg",
-    link: "https://firebase.google.com/?utm_source=google&utm_medium=cpc&utm_campaign=Cloud-SS-DR-Firebase-FY26-global-gsem-1713590&utm_content=text-ad&utm_term=KW_firebase&gclsrc=aw.ds&gad_source=1&gad_campaignid=23417478209&gbraid=0AAAAADpUDOj3Gm6nEjUIWPpWZF7HOHcNy&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8hBV2DoswCr_knUSgO3tgtka8XnJCoidzHQszRqgvEq3FhC5YAbWlkaAjkvEALw_wcB",
+    link: "https://firebase.google.com/",
   },
   {
     name: "Node JS",
@@ -162,33 +165,6 @@ export const stacks = [
     name: "Git",
     logo: "https://res.cloudinary.com/djlqvqxao/image/upload/w_96,h_96,f_auto,q_auto/v1769957120/git_dfaidv.svg",
     link: "https://git-scm.com/",
-  },
-];
-
-export const profileInfo: ProfileInfo[] = [
-  {
-    title: "FullStack Developer",
-    icon: Code2Icon,
-  },
-  {
-    title: "Chattogram, Bangladesh",
-    icon: MapPinIcon,
-  },
-  {
-    title: "+88 0174749-3837",
-    icon: Phone,
-  },
-  {
-    title: "shakurshirajul.com",
-    icon: Link,
-  },
-  {
-    title: "01:16 PM",
-    icon: Clock,
-  },
-  {
-    title: "shiirajullisllam@gmail.com",
-    icon: Mail,
   },
 ];
 

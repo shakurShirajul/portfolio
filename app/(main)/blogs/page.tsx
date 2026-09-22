@@ -19,11 +19,13 @@ export const metadata: Metadata = {
     url: "/blogs",
     title: "Blog",
     description,
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog",
     description,
+    images: ["/opengraph-image"],
   },
 };
 
