@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how information submitted through Shirajul Islam Shakur's portfolio contact form is collected, used, and protected.",
+    "How information is handled on Shirajul Islam Shakur's portfolio — contact form submissions and cookieless Vercel Web Analytics.",
   alternates: {
     canonical: "/privacy",
   },
@@ -18,11 +18,11 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-          This policy explains what information is handled when you use the
-          contact form on this portfolio and how that information is used.
+          This policy explains what information is handled when you visit this
+          portfolio or use its contact form, and how that information is used.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
-          Last updated: July 14, 2026
+          Last updated: September 22, 2026
         </p>
       </header>
 
@@ -40,6 +40,34 @@ export default function PrivacyPage() {
             limit repeated submissions and reduce spam. The form does not ask
             for payment information, passwords, or sensitive identity data.
           </p>
+        </section>
+
+        <section aria-labelledby="analytics">
+          <h2
+            id="analytics"
+            className="font-gabarito text-2xl font-semibold text-foreground"
+          >
+            Analytics
+          </h2>
+          <p className="mt-3">
+            This site uses Vercel Web Analytics to count page visits and see
+            which pages are read. It records aggregate data such as the page
+            visited, the referring site, and general country-level location. It
+            does not use cookies, does not store data in your browser, and does
+            not track you across other websites. No profile is built about you,
+            and visits are not linked to any message you send through the
+            contact form.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <a
+              href="https://vercel.com/docs/analytics/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline underline-offset-4"
+            >
+              Vercel Analytics Privacy
+            </a>
+          </div>
         </section>
 
         <section aria-labelledby="information-use">
