@@ -20,6 +20,12 @@ export interface Blog {
   /** Optional. Posts without one fall back to the site's default OG card. */
   thumbnail?: string;
   thumbnailAlt?: string;
+  /**
+   * Intrinsic size of `thumbnail`. Next cannot infer dimensions for a remote
+   * image, and a wrong ratio here causes layout shift. Defaults to 16:9.
+   */
+  thumbnailWidth?: number;
+  thumbnailHeight?: number;
   content: string;
   faqs: BlogFaq[];
 }

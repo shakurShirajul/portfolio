@@ -150,14 +150,18 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
             <span>{blog.readingTime}</span>
           </div>
           {blog.thumbnail && (
-            <div className="relative mt-8 aspect-video overflow-hidden rounded-2xl border">
+            // Intrinsic sizing rather than a fixed aspect-ratio box: banner
+            // images vary in shape, and object-cover on a mismatched ratio
+            // silently crops the edges — where the title text usually sits.
+            <div className="mt-8 overflow-hidden rounded-2xl border">
               <Image
                 src={blog.thumbnail}
                 alt={blog.thumbnailAlt ?? ""}
-                fill
+                width={blog.thumbnailWidth ?? 1200}
+                height={blog.thumbnailHeight ?? 675}
                 priority
                 sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover"
+                className="h-auto w-full"
               />
             </div>
           )}

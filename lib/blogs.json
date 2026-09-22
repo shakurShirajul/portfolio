@@ -33,7 +33,9 @@
         "question": "How do I find an attacker's IP if WordPress does not log account creation?",
         "answer": "WordPress stores the exact registration timestamp for every user. Search your web server access logs for that second and the request that created the account appears with its source IP. Correlating registration timestamps against access logs is how you reconstruct the order of events and distinguish separate parties."
       }
-    ]
+    ],
+    "thumbnailWidth": 1942,
+    "thumbnailHeight": 809
   },
   {
     "title": "What Shipping a WordPress CRM Taught Me About Being a Developer",
@@ -70,6 +72,8 @@
         "answer": "Working on software with real users. Tutorials build on an empty page in an environment you fully control; production work happens inside constraints and conventions you did not choose. The shift is learning to read an existing system well enough to extend it rather than rebuilding it the way you would have designed it."
       }
     ],
-    "updatedAt": "2026-09-22"
+    "updatedAt": "2026-09-22",
+    "thumbnailWidth": 1536,
+    "thumbnailHeight": 1024
   }
 ]
