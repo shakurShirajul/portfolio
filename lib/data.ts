@@ -197,9 +197,17 @@ export const projects: Project[] = [
     id: 1,
     slug: "bit-crm",
     image: "/bit-crm-landing-page.webp",
+    imageAlt:
+      "Bit CRM landing page showing the sales pipeline, deals, and invoicing modules that run inside the WordPress admin",
     ogImage: "/bit-crm-og.webp",
     isLongScreenshot: true,
     name: "Bit CRM",
+    fullName:
+      "Bit CRM: Sales CRM Manage Lead, Contact, Deal, Invoice, Client Portal & Collect Payment",
+    tagline:
+      "A full sales pipeline — leads, deals, invoices, and automation — running inside the WordPress admin.",
+    seoTitle: "Bit CRM — Sales & Marketing Automation for WordPress",
+    updatedAt: "2026-09-22",
     description:
       "Bit CRM is a WordPress plugin that runs an entire sales pipeline inside the WordPress admin — leads, contacts, deals, invoices, and client management, with a visual workflow builder for automation and native WooCommerce sync. It ships an MCP server and a built-in AI assistant, so the CRM can be driven directly from tools like Claude and ChatGPT.",
     seoDescription:

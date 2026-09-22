@@ -18,10 +18,18 @@ export default function Hero() {
               Full-stack developer
             </h1>
 
-            <p className="text-sm font-medium leading-relaxed text-muted-foreground">
-              Junior Developer at Bit Code.
-              <br />
-              Based in Chattogram, Bangladesh.
+            <p className="mx-auto max-w-md text-sm font-medium leading-relaxed text-muted-foreground text-pretty md:mx-0">
+              I build production software people actually use — most recently{" "}
+              <Link
+                href="/projects/bit-crm"
+                className="font-semibold text-foreground underline-offset-4 hover:underline"
+              >
+                Bit CRM
+              </Link>
+              , a sales CRM plugin published on the WordPress.org directory.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Developer at Bit Code · Chattogram, Bangladesh
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 pt-1 md:justify-start">
@@ -49,7 +57,7 @@ export default function Hero() {
           <div className="relative shrink-0">
             <Image
               src={shakur}
-              alt="Shakur"
+              alt="Shirajul Islam Shakur, full-stack developer"
               width={120}
               height={120}
               priority

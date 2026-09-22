@@ -13,6 +13,8 @@ export interface Blog {
   excerpt: string;
   author: string;
   publishedAt: string;
+  /** ISO date of the last substantive edit. Feeds schema dateModified. */
+  updatedAt?: string;
   readingTime: string;
   category: string;
   thumbnail: string;

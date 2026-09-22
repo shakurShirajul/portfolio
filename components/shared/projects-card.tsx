@@ -17,7 +17,7 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
         {project.isLongScreenshot ? (
           <Image
             src={project.image}
-            alt={project.name}
+            alt=""
             width={900}
             height={9805}
             sizes="(max-width: 1024px) 100vw, 33vw"
@@ -26,7 +26,7 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
         ) : (
           <Image
             src={project.image}
-            alt={project.name}
+            alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"

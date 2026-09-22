@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { blogs } from "@/lib/blogs";
+import { personSchema } from "@/lib/person-schema";
 import { SITE_URL } from "@/lib/site";
 
 type BlogPageProps = {
@@ -58,6 +59,9 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
 
   const articleUrl = `${SITE_URL}/blogs/${blog.slug}`;
   const jsonLd = [
+    // The Person the @id references below, so this page's graph resolves
+    // standalone rather than depending on the homepage being crawled first.
+    personSchema,
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -65,9 +69,33 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
       description: blog.description,
       image: blog.thumbnail,
       datePublished: blog.publishedAt,
+      dateModified: blog.updatedAt ?? blog.publishedAt,
       mainEntityOfPage: articleUrl,
-      author: { "@type": "Person", name: blog.author, url: SITE_URL },
-      publisher: { "@type": "Person", name: blog.author, url: SITE_URL },
+      url: articleUrl,
+      articleSection: blog.category,
+      // Reference the homepage Person by @id so the article resolves to the
+      // same entity as the projects and the About page.
+      author: { "@id": `${SITE_URL}/#person` },
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${SITE_URL}/blogs`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: blog.title,
+          item: articleUrl,
+        },
+      ],
     },
     ...(blog.faqs.length > 0
       ? [

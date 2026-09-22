@@ -32,10 +32,10 @@ const nextConfig: NextConfig = {
     return [
       { source: "/projects/3", destination: "/projects/bit-crm", permanent: true },
       // urban-dwell and devnotes are commented out in lib/data.ts, so their
-      // old numeric URLs go to the homepage rather than a 404. Restore the
-      // slug destinations if those projects come back.
-      { source: "/projects/1", destination: "/", permanent: false },
-      { source: "/projects/2", destination: "/", permanent: false },
+      // old numeric URLs go to the projects index rather than a 404. Restore
+      // the slug destinations if those projects come back.
+      { source: "/projects/1", destination: "/projects", permanent: false },
+      { source: "/projects/2", destination: "/projects", permanent: false },
     ];
   },
 };

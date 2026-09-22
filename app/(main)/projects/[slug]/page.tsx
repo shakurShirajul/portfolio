@@ -31,10 +31,13 @@ export async function generateMetadata({
 
   const description = project.seoDescription ?? project.description;
   const socialImage = project.ogImage ?? project.image;
+  const imageAlt = project.imageAlt ?? `${project.name} screenshot`;
 
   return {
-    title: project.name,
+    title: project.seoTitle ?? project.name,
     description,
+    keywords: project.techStack,
+    authors: [{ name: "Shirajul Islam Shakur", url: SITE_URL }],
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
@@ -43,7 +46,7 @@ export async function generateMetadata({
       url: `/projects/${project.slug}`,
       title: project.name,
       description,
-      images: [{ url: socialImage, alt: `${project.name} screenshot` }],
+      images: [{ url: socialImage, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
@@ -64,21 +67,62 @@ export default async function ProjectDetailPage({
 
   const projectUrl = `${SITE_URL}/projects/${project.slug}`;
   const socialImage = project.ogImage ?? project.image;
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: project.name,
-    description: project.seoDescription ?? project.description,
-    url: projectUrl,
-    image: socialImage.startsWith("http")
-      ? socialImage
-      : `${SITE_URL}${socialImage}`,
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    author: { "@type": "Person", name: "Shirajul Islam Shakur", url: SITE_URL },
-    keywords: project.techStack.join(", "),
-    sameAs: [project.liveLink, project.github_client].filter(Boolean),
+  // Reference the homepage Person by @id so the project resolves to the same
+  // entity rather than looking like a second, unrelated person.
+  const author = {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: "Shirajul Islam Shakur",
+    url: SITE_URL,
   };
+
+  // CreativeWork rather than SoftwareApplication: these are portfolio entries,
+  // and software rich results need offers/ratings/reviews we do not have. The
+  // live site and the source/listing are `url` and `codeRepository` on the
+  // work itself — `sameAs` is for profiles identifying the same entity.
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: project.name,
+      ...(project.fullName ? { alternateName: project.fullName } : {}),
+      headline: project.seoTitle ?? project.name,
+      abstract: project.seoDescription ?? project.description,
+      description: project.description,
+      url: projectUrl,
+      mainEntityOfPage: projectUrl,
+      image: socialImage.startsWith("http")
+        ? socialImage
+        : `${SITE_URL}${socialImage}`,
+      author,
+      creator: author,
+      ...(project.updatedAt ? { dateModified: project.updatedAt } : {}),
+      keywords: project.techStack.join(", "),
+      ...(project.liveLink ? { sameAs: [project.liveLink] } : {}),
+      ...(project.github_client
+        ? { codeRepository: project.github_client }
+        : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Projects",
+          item: `${SITE_URL}/projects`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: project.name,
+          item: projectUrl,
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="max-w-4xl mx-auto w-full px-4 md:px-8 pt-30 pb-16 space-y-8">
@@ -88,20 +132,40 @@ export default async function ProjectDetailPage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="size-4" />
-        Back
-      </Link>
+      <nav aria-label="Breadcrumb">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+          <li>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            >
+              <ArrowLeft aria-hidden="true" className="size-4" />
+              Projects
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li className="text-foreground" aria-current="page">
+            {project.name}
+          </li>
+        </ol>
+      </nav>
 
       <header className="space-y-4">
-        <h1 className="font-gabarito text-3xl font-semibold">{project.name}</h1>
+        <div className="space-y-1">
+          <h1 className="font-gabarito text-3xl font-semibold">
+            {project.name}
+          </h1>
+          {project.fullName && project.fullName !== project.name && (
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground text-pretty">
+              Published as{" "}
+              <span className="text-foreground/80">{project.fullName}</span>
+            </p>
+          )}
+        </div>
         <div className="relative aspect-[16/9] overflow-hidden rounded-lg border">
           <Image
             src={project.image}
-            alt={project.name}
+            alt={project.imageAlt ?? `${project.name} screenshot`}
             fill
             priority
             sizes="(max-width: 768px) 100vw, 896px"

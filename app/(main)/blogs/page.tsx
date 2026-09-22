@@ -3,19 +3,72 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { blogs } from "@/lib/blogs";
+import { SITE_URL } from "@/lib/site";
+
+const description =
+  "Articles by Shirajul Islam Shakur about full-stack development, programming, practical projects, and lessons from a developer's journey.";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description:
-    "Articles by Shirajul Islam Shakur about full-stack development, programming, practical projects, and lessons from a developer's journey.",
+  description,
   alternates: {
     canonical: "/blogs",
+  },
+  openGraph: {
+    type: "website",
+    url: "/blogs",
+    title: "Blog",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog",
+    description,
   },
 };
 
 export default function BlogsPage() {
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "Blog",
+      description,
+      url: `${SITE_URL}/blogs`,
+      author: { "@id": `${SITE_URL}/#person` },
+      blogPost: blogs.map((blog) => ({
+        "@type": "BlogPosting",
+        headline: blog.title,
+        description: blog.description,
+        url: `${SITE_URL}/blogs/${blog.slug}`,
+        datePublished: blog.publishedAt,
+        image: blog.thumbnail,
+        author: { "@id": `${SITE_URL}/#person` },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${SITE_URL}/blogs`,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-32 md:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="max-w-2xl space-y-3">
         <h1 className="font-gabarito text-4xl font-semibold tracking-tight">
           Blog
@@ -55,9 +108,9 @@ export default function BlogsPage() {
                     timeZone: "UTC",
                   }).format(new Date(blog.publishedAt))}
                 </time>
-                <h2 className="mt-2 font-gabarito text-2xl font-semibold leading-tight">
+                <h3 className="mt-2 font-gabarito text-2xl font-semibold leading-tight">
                   {blog.title}
-                </h2>
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {blog.excerpt}
                 </p>

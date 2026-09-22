@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/projects`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/blogs`,
       changeFrequency: "weekly",
       priority: 0.6,
@@ -30,13 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${SITE_URL}/projects/${project.slug}`,
+    ...(project.updatedAt ? { lastModified: project.updatedAt } : {}),
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: 0.8,
   }));
 
   const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({
     url: `${SITE_URL}/blogs/${blog.slug}`,
-    lastModified: blog.publishedAt,
+    lastModified: blog.updatedAt ?? blog.publishedAt,
     changeFrequency: "yearly",
     priority: 0.8,
   }));
