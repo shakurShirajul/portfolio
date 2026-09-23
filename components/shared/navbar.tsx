@@ -6,6 +6,7 @@ import { Button, buttonVariants } from "../ui/button";
 import { Download, Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { CV_PATH } from "@/lib/site";
 import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
@@ -45,8 +46,7 @@ export default function Navbar() {
           })}
           <ThemeToggle compact />
           <a
-            href="/shirajul-islam-shakur-cv.pdf"
-            download
+            href={CV_PATH}
             className={cn(
               buttonVariants({ size: "sm" }),
               "rounded-full text-sm",
@@ -100,8 +100,7 @@ export default function Navbar() {
                   );
                 })}
                 <a
-                  href="/shirajul-islam-shakur-cv.pdf"
-                  download
+                  href={CV_PATH}
                   className={cn(
                     buttonVariants({ size: "sm" }),
                     "mt-1 w-full justify-start rounded-xl text-sm",

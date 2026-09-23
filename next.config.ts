@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { CV_PATH, CV_URL } from "./lib/site";
 
 const nextConfig: NextConfig = {
   images: {
@@ -37,12 +38,6 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        source: "/shirajul-islam-shakur-cv.pdf",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400" },
-        ],
-      },
     ];
   },
   async redirects() {
@@ -56,6 +51,14 @@ const nextConfig: NextConfig = {
       // give them fresh slugs rather than reusing these.
       { source: "/projects/1", destination: "/projects", permanent: true },
       { source: "/projects/2", destination: "/projects", permanent: true },
+      // Temporary, so browsers don't cache the destination and the CV can
+      // change hosts. The old PDF path keeps previously shared links alive.
+      { source: CV_PATH, destination: CV_URL, permanent: false },
+      {
+        source: "/shirajul-islam-shakur-cv.pdf",
+        destination: CV_URL,
+        permanent: false,
+      },
     ];
   },
 };

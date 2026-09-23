@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Social } from "@/shared/types";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { CV_PATH } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -42,8 +43,7 @@ export default function Footer() {
                 }
             </div>
             <a
-              href="/shirajul-islam-shakur-cv.pdf"
-              download
+              href={CV_PATH}
               className={cn(buttonVariants({ size: "sm" }), "rounded-full text-sm")}
             >
                 <Download aria-hidden="true" />

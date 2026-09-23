@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { socials } from "@/lib/data";
 import { personSchema } from "@/lib/person-schema";
-import { SITE_URL } from "@/lib/site";
+import { CV_PATH, SITE_URL } from "@/lib/site";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
             Send a message
           </Link>
           <a
-            href="/shirajul-islam-shakur-cv.pdf"
+            href={CV_PATH}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
