@@ -27,8 +27,13 @@ export default function Projects() {
         </Link>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {projects.map((project: Project) => (
-          <ProjectsCard key={project.id} project={project} />
+        {projects.map((project: Project, index: number) => (
+          <ProjectsCard
+            key={project.id}
+            project={project}
+            isLcpCandidate={index === 0}
+            sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 895px) calc(100vw - 66px), (max-width: 1023px) 830px, 262px"
+          />
         ))}
       </div>
     </section>

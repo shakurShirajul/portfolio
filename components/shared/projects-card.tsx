@@ -6,8 +6,14 @@ import { buttonVariants } from "../ui/button";
 
 interface ProjectCardProps {
   project: Project;
+  sizes: string;
+  isLcpCandidate?: boolean;
 }
-export default function ProjectsCard({ project }: ProjectCardProps) {
+export default function ProjectsCard({
+  project,
+  sizes,
+  isLcpCandidate = false,
+}: ProjectCardProps) {
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -20,12 +26,10 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
             alt=""
             width={900}
             height={9805}
-            loading="lazy"
+            loading={isLcpCandidate ? "eager" : "lazy"}
+            fetchPriority={isLcpCandidate ? "high" : undefined}
             quality={70}
-            // The card is at most ~380px wide, but the 1:10.9 aspect ratio
-            // makes Next pick a far larger candidate from `width`. Cap it:
-            // w=640 halves the payload with no visible loss at this size.
-            sizes="(max-width: 1024px) 640px, 400px"
+            sizes={sizes}
             className="absolute inset-x-0 top-0 w-full h-auto transition-transform duration-6000 ease-linear group-hover:translate-y-[-93.1%] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
           />
         ) : (
@@ -33,7 +37,9 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
             src={project.image}
             alt=""
             fill
-            sizes="(max-width: 1024px) 100vw, 33vw"
+            loading={isLcpCandidate ? "eager" : "lazy"}
+            fetchPriority={isLcpCandidate ? "high" : undefined}
+            sizes={sizes}
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         )}
