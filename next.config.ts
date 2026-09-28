@@ -1,6 +1,36 @@
 import type { NextConfig } from "next";
 import { CV_PATH, CV_URL } from "./lib/site";
 
+const isDev = process.env.NODE_ENV === "development";
+
+// No nonces: they force every page to render dynamically. 'unsafe-inline' on
+// script-src covers Next's inline bootstrap and the next-themes script.
+// Cloudinary is listed because next/image serves SVGs straight from the
+// source instead of optimizing them. In development, React needs eval and
+// Vercel Analytics loads its debug script from va.vercel-scripts.com.
+const csp = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval' https://va.vercel-scripts.com" : ""}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' blob: data: https://res.cloudinary.com",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+const permissionsPolicy = [
+  "camera=()",
+  "microphone=()",
+  "geolocation=()",
+  "payment=()",
+  "usb=()",
+  "browsing-topics=()",
+].join(", ");
+
 const nextConfig: NextConfig = {
   images: {
     // AVIF first, WebP as fallback: smaller payloads for the Cloudinary
@@ -36,6 +66,8 @@ const nextConfig: NextConfig = {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
           },
+          { key: "Content-Security-Policy", value: csp },
+          { key: "Permissions-Policy", value: permissionsPolicy },
         ],
       },
     ];
