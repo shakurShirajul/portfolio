@@ -95,8 +95,13 @@ export default function ProjectsPage() {
           All projects
         </h2>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project: Project) => (
-            <ProjectsCard key={project.id} project={project} />
+          {projects.map((project: Project, index: number) => (
+            <ProjectsCard
+              key={project.id}
+              project={project}
+              isLcpCandidate={index === 0}
+              sizes="(max-width: 639px) calc(100vw - 34px), (max-width: 767px) calc(50vw - 28px), (max-width: 895px) calc(50vw - 44px), (max-width: 1023px) 404px, 262px"
+            />
           ))}
         </div>
       </section>
