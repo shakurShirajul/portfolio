@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
-  Geist,
   Geist_Mono,
   Inter,
   Pacifico,
   Gabarito,
-  Stardos_Stencil,
 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -15,11 +13,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -35,12 +28,6 @@ const pacifico = Pacifico({
 const gabarito = Gabarito({
   subsets: ["latin"],
   variable: "--font-gabarito",
-});
-
-const stardosStencil = Stardos_Stencil({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-stardos-stencil",
 });
 
 export const metadata: Metadata = {
@@ -89,13 +76,11 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        geistSans.variable,
         geistMono.variable,
         "font-sans",
         inter.variable,
         pacifico.variable,
         gabarito.variable,
-        stardosStencil.variable,
       )}
     >
       <body className="min-h-full flex flex-col">
