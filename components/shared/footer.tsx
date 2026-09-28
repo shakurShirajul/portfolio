@@ -60,7 +60,14 @@ export default function Footer() {
             className="font-medium text-foreground underline underline-offset-4"
           >
             Privacy
-          </Link>
+          </Link>{" "}
+          &middot;{" "}
+          <a
+            href="/sitemap.xml"
+            className="font-medium text-foreground underline underline-offset-4"
+          >
+            Sitemap
+          </a>
         </p>
       </div>
     </footer>
