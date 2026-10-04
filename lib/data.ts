@@ -177,6 +177,7 @@ export const projects: Project[] = [
       "Bit CRM landing page showing the sales pipeline, deals, and invoicing modules that run inside the WordPress admin",
     ogImage: "/bit-crm-og.webp",
     isLongScreenshot: true,
+    imageSize: { width: 900, height: 9805 },
     name: "Bit CRM",
     fullName:
       "Bit CRM: Sales CRM Manage Lead, Contact, Deal, Invoice, Client Portal & Collect Payment",
@@ -217,6 +218,51 @@ export const projects: Project[] = [
       "Building a React application inside the WordPress admin meant working around a host environment we do not control — global styles, enqueued scripts, and an admin shell that expects to own the page. Integrating with Bit Form, Bit Flows, and Bit Integrations meant matching conventions set by plugins that were already shipping, so the CRM had to fit their data flow rather than impose its own. Across the dashboard, calendar, and activity views, keeping server state in TanStack Query separate from local UI state in Zustand was what kept the interface predictable as the module count grew.",
     futurePlans:
       "Bit CRM is actively maintained, and we ship improvements regularly based on what users tell us they need. Every release is shaped by real feedback from the people running their business on it — and there is still plenty we want to build.",
+  },
+  {
+    id: 2,
+    slug: "attractive-mart",
+    image: "/attractive-mart-landing-page.webp",
+    imageAlt:
+      "Attractive Mart storefront homepage with a diecast car hero, shop-by-category tiles, a product grid, and an FAQ section",
+    ogImage: "/attractive-mart-og.webp",
+    isLongScreenshot: true,
+    imageSize: { width: 900, height: 2767 },
+    name: "Attractive Mart",
+    tagline:
+      "A WooCommerce storefront for diecast cars, hobby toys, and gadgets on a custom WordPress theme.",
+    seoTitle: "Attractive Mart — Custom WooCommerce Store Theme",
+    updatedAt: "2026-10-04",
+    description:
+      "Attractive Mart is a WooCommerce store for diecast cars, hobby toys, and everyday gadgets, built on a custom Astra child theme. The storefront replaces the stock WooCommerce templates with its own homepage, category browsing, product grid, slide-out cart and account drawers, and checkout, styled with Tailwind CSS.",
+    seoDescription:
+      "A WooCommerce store for diecast cars, hobby toys, and gadgets, built on a custom Astra child theme with Tailwind CSS and AJAX cart drawers.",
+    liveLink: "https://wordpress.shakurshirajul.com",
+    liveLinkLabel: "Visit Store",
+    github_client: "",
+    techStack: [
+      "WordPress",
+      "WooCommerce",
+      "PHP",
+      "Tailwind CSS",
+      "JavaScript",
+    ],
+    contributions: [
+      "Custom Astra child theme",
+      "Homepage with hero, categories, and FAQ",
+      "Product grid with category filters",
+      "AJAX add-to-cart",
+      "Slide-out cart drawer",
+      "Account drawer",
+      "Product search",
+      "Product image gallery",
+      "Customized checkout",
+      "Responsive mobile menu",
+    ],
+    challenges:
+      "WooCommerce and Astra both ship their own markup and styles, so a custom design meant overriding templates without breaking the cart, checkout, and account flows they depend on. The cart and account drawers had to stay in sync with WooCommerce's cart fragments after AJAX add-to-cart, and Tailwind's utility classes had to coexist with the parent theme's global CSS without leaking into each other.",
+    futurePlans:
+      "Add product reviews and a wishlist, grow the catalog beyond the launch collection, and add local payment and delivery options at checkout.",
   },
   // Placeholder projects, hidden until replaced with real work.
   // Uncomment to restore; their redirects in next.config.ts still point here.

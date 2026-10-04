@@ -56,6 +56,8 @@ export interface Project {
   futurePlans: string;
   /** Full-page screenshot: the card scrolls it on hover instead of cropping. */
   isLongScreenshot?: boolean;
+  /** Intrinsic pixel size of `image`. Required for long screenshots. */
+  imageSize?: { width: number; height: number };
 }
 
 export interface NavLink {

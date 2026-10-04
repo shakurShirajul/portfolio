@@ -1,4 +1,5 @@
 import { Project } from "@/shared/types";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -14,23 +15,31 @@ export default function ProjectsCard({
   sizes,
   isLcpCandidate = false,
 }: ProjectCardProps) {
+  const longImage =
+    project.isLongScreenshot && project.imageSize ? project.imageSize : null;
+  // Scroll until the bottom of the image meets the bottom of the 4:3 frame.
+  const scrollOffset = longImage
+    ? `-${(((longImage.height - (longImage.width * 3) / 4) / longImage.height) * 100).toFixed(1)}%`
+    : undefined;
+
   return (
     <Link
       href={`/projects/${project.slug}`}
       className="group relative flex h-full flex-col overflow-hidden rounded-lg border bg-card text-card-foreground transition-colors hover:border-foreground/20"
     >
       <div className="relative aspect-4/3 overflow-hidden">
-        {project.isLongScreenshot ? (
+        {longImage ? (
           <Image
             src={project.image}
             alt=""
-            width={900}
-            height={9805}
+            width={longImage.width}
+            height={longImage.height}
             loading={isLcpCandidate ? "eager" : "lazy"}
             fetchPriority={isLcpCandidate ? "high" : undefined}
             quality={70}
             sizes={sizes}
-            className="absolute inset-x-0 top-0 w-full h-auto transition-transform duration-6000 ease-linear group-hover:translate-y-[-93.1%] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
+            style={{ "--scroll-offset": scrollOffset } as CSSProperties}
+            className="absolute inset-x-0 top-0 w-full h-auto transition-transform duration-6000 ease-linear group-hover:translate-y-(--scroll-offset) motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
           />
         ) : (
           <Image
