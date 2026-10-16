@@ -52,11 +52,13 @@ export const Blogs: CollectionConfig = {
   },
   hooks: {
     beforeChange: [
-      ({ data, originalDoc }) => {
+      ({ data, originalDoc, context }) => {
         const content = data.content === undefined ? originalDoc?.content : data.content;
         const text = content?.root ? convertLexicalToPlaintext({ data: content }).trim() : "";
         const wordCount = text ? text.split(/\s+/).length : 0;
-        data.readingTime = `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
+        if (context.migrateLegacyBlogs !== true || !data.readingTime) {
+          data.readingTime = `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
+        }
 
         if (data._status === "published" && !data.publishedAt) {
           data.publishedAt = originalDoc?.publishedAt || new Date().toISOString();

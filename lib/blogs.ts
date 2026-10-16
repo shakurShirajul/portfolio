@@ -1,36 +1,51 @@
-import blogData from "@/lib/blogs.json";
+import "server-only";
 
-export interface BlogFaq {
-  question: string;
-  answer: string;
+import { cache } from "react";
+import { connection } from "next/server";
+import { getPayload } from "payload";
+import config from "@payload-config";
+import type { Blog as PayloadBlog } from "@/shared/payload-types";
+
+function normalizeBlog(blog: PayloadBlog) {
+  return {
+    ...blog,
+    seoTitle: blog.seoTitle?.trim() || blog.title,
+    publishedAt: blog.publishedAt || blog.createdAt,
+    faqs: blog.faqs ?? [],
+  };
 }
 
-export interface Blog {
-  title: string;
-  seoTitle: string;
-  slug: string;
-  description: string;
-  excerpt: string;
-  author: string;
-  publishedAt: string;
-  /** ISO date of the last substantive edit. Feeds schema dateModified. */
-  updatedAt?: string;
-  readingTime: string;
-  category: string;
-  /** Optional. Posts without one fall back to the site's default OG card. */
-  thumbnail?: string;
-  thumbnailAlt?: string;
-  /**
-   * Intrinsic size of `thumbnail`. Next cannot infer dimensions for a remote
-   * image, and a wrong ratio here causes layout shift. Defaults to 16:9.
-   */
-  thumbnailWidth?: number;
-  thumbnailHeight?: number;
-  content: string;
-  faqs: BlogFaq[];
-}
+// Request-time reads make publishes and unpublishes visible without a rebuild.
+// React cache deduplicates the article and metadata query within one render only.
+export const getPublishedBlogs = cache(async () => {
+  await connection();
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "blogs",
+    where: { _status: { equals: "published" } },
+    sort: "-publishedAt",
+    pagination: false,
+    depth: 1,
+    draft: false,
+    overrideAccess: false,
+  });
 
-/** Newest first, so the index and sitemap do not depend on hand-ordering. */
-export const blogs: Blog[] = [...blogData].sort((a, b) =>
-  b.publishedAt.localeCompare(a.publishedAt),
-);
+  return docs.map(normalizeBlog);
+});
+
+export const getPublishedBlogBySlug = cache(async (slug: string) => {
+  await connection();
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "blogs",
+    where: {
+      and: [{ slug: { equals: slug } }, { _status: { equals: "published" } }],
+    },
+    limit: 1,
+    depth: 1,
+    draft: false,
+    overrideAccess: false,
+  });
+
+  return docs[0] ? normalizeBlog(docs[0]) : null;
+});

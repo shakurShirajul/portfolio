@@ -3,23 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { blogs } from "@/lib/blogs";
-import { personSchema } from "@/lib/person-schema";
+import { getPublishedBlogBySlug } from "@/lib/blogs";
+import { personSchema, PERSON_NAME } from "@/lib/person-schema";
+import BlogContent from "@/components/shared/blog-content";
 import { SITE_URL } from "@/lib/site";
 
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return blogs.map((blog) => ({ slug: blog.slug }));
-}
-
 export async function generateMetadata({
   params,
 }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const blog = blogs.find((item) => item.slug === slug);
+  const blog = await getPublishedBlogBySlug(slug);
 
   if (!blog) {
     return {
@@ -32,7 +29,7 @@ export async function generateMetadata({
     title: blog.seoTitle,
     description: blog.description,
     alternates: { canonical: `/blogs/${blog.slug}` },
-    authors: [{ name: blog.author, url: SITE_URL }],
+    authors: [{ name: blog.author, ...(blog.author === PERSON_NAME ? { url: SITE_URL } : {}) }],
     openGraph: {
       type: "article",
       url: `/blogs/${blog.slug}`,
@@ -56,7 +53,7 @@ export async function generateMetadata({
 
 export default async function BlogArticlePage({ params }: BlogPageProps) {
   const { slug } = await params;
-  const blog = blogs.find((item) => item.slug === slug);
+  const blog = await getPublishedBlogBySlug(slug);
 
   if (!blog) notFound();
 
@@ -78,7 +75,9 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
       articleSection: blog.category,
       // Reference the homepage Person by @id so the article resolves to the
       // same entity as the projects and the About page.
-      author: { "@id": `${SITE_URL}/#person` },
+      author: blog.author === PERSON_NAME
+        ? { "@id": `${SITE_URL}/#person` }
+        : { "@type": "Person", name: blog.author },
       publisher: { "@id": `${SITE_URL}/#person` },
     },
     {
@@ -168,10 +167,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
           )}
         </header>
 
-        <div
-          className="mt-10 space-y-6 text-[1.05rem] leading-8 text-muted-foreground [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-4 [&_h2]:pt-6 [&_h2]:font-gabarito [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:leading-tight [&_h2]:text-foreground [&_li]:ml-5 [&_li]:pl-1 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:space-y-2"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
+        <BlogContent content={blog.content} />
 
         {blog.faqs.length > 0 ? (
           <section

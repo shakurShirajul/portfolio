@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import { blogs } from "@/lib/blogs";
+import { getPublishedBlogs } from "@/lib/blogs";
+import { PERSON_NAME } from "@/lib/person-schema";
 import { SITE_URL } from "@/lib/site";
 
 const description =
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogsPage() {
+export default async function BlogsPage() {
+  const blogs = await getPublishedBlogs();
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -45,7 +47,9 @@ export default function BlogsPage() {
         url: `${SITE_URL}/blogs/${blog.slug}`,
         datePublished: blog.publishedAt,
         image: blog.thumbnail ?? `${SITE_URL}/opengraph-image`,
-        author: { "@id": `${SITE_URL}/#person` },
+        author: blog.author === PERSON_NAME
+          ? { "@id": `${SITE_URL}/#person` }
+          : { "@type": "Person", name: blog.author },
       })),
     },
     {
@@ -85,6 +89,9 @@ export default function BlogsPage() {
         <h2 id="latest-articles" className="sr-only">
           Latest articles
         </h2>
+        {blogs.length === 0 && (
+          <p className="text-muted-foreground">No articles published yet.</p>
+        )}
         {blogs.map((blog) => (
           <article
             key={blog.slug}

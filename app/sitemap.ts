@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/data";
-import { blogs } from "@/lib/blogs";
+import { getPublishedBlogs } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogs = await getPublishedBlogs();
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
