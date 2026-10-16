@@ -1,10 +1,18 @@
 import { buildConfig } from "payload";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { FixedToolbarFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
+import path from "node:path";
+import { Blogs } from "@/collections/blogs";
 import { Users } from "./collections/User";
 
 export default buildConfig({
-  editor: lexicalEditor(),
+  admin: { user: "users" },
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature()],
+  }),
+  typescript: {
+    outputFile: path.resolve(process.cwd(), "shared/payload-types.ts"),
+  },
   secret: process.env.PAYLOAD_SECRET!,
   db: mongooseAdapter({
     url: process.env.DATABASE_URL!,
@@ -20,6 +28,7 @@ export default buildConfig({
         },
       ],
     },
-    Users
+    Users,
+    Blogs,
   ],
 });

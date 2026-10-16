@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:types": "node --import tsx ./node_modules/payload/bin.js generate:types --disable-transpile",
+    "generate:importmap": "node --import tsx ./node_modules/payload/bin.js generate:importmap --disable-transpile"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -36,6 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
+    "tsx": "4.23.15",
     "typescript": "^5"
   }
 }
