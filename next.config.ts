@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
+
 import { CV_PATH, CV_URL } from "./lib/site";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -32,6 +34,9 @@ const permissionsPolicy = [
 ].join(", ");
 
 const nextConfig: NextConfig = {
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     // AVIF first, WebP as fallback: smaller payloads for the Cloudinary
     // logos and the project screenshots.
@@ -76,7 +81,11 @@ const nextConfig: NextConfig = {
     // Project detail pages moved from numeric ids to slugs. These preserve the
     // URLs Google already indexed; the numbers map to the pre-slug ordering.
     return [
-      { source: "/projects/3", destination: "/projects/bit-crm", permanent: true },
+      {
+        source: "/projects/3",
+        destination: "/projects/bit-crm",
+        permanent: true,
+      },
       // urban-dwell and devnotes never shipped, so their old numeric URLs go
       // to the projects index. Permanent, so the dead URLs drop out of the
       // index rather than lingering on a 302. If those projects come back,
@@ -95,4 +104,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig) 
